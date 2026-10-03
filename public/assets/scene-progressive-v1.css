@@ -1,0 +1,10 @@
+/* Keep the real product visible until the first successful WebGL frame. */
+.hero-product .bottle-stage canvas { display: block; opacity: 0; transition: opacity .2s; }
+.hero-product .bottle-stage .bottle-fallback { display: block; opacity: 1; visibility: visible; pointer-events: none; transition: opacity .2s; }
+.hero-product .bottle-stage.webgl-ready canvas { opacity: 1; }
+.hero-product .bottle-stage.webgl-ready .bottle-fallback { opacity: 0; visibility: hidden; }
+.hero-product .bottle-stage.webgl-failed canvas { opacity: 0; }
+.hero-product .bottle-stage.webgl-failed .bottle-fallback { opacity: 1; visibility: visible; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-product .bottle-stage canvas, .hero-product .bottle-stage .bottle-fallback { transition: none; }
+}

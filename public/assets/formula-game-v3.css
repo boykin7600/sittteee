@@ -1,0 +1,331 @@
+.formula-snapshot {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 13%, rgba(171, 73, 101, 0.12), transparent 26%),
+    radial-gradient(circle at 8% 88%, rgba(112, 18, 49, 0.07), transparent 25%),
+    #f8f0ec !important;
+}
+
+.formula-snapshot::before {
+  content: "K";
+  position: absolute;
+  right: -0.04em;
+  bottom: -0.22em;
+  color: rgba(112, 18, 49, 0.035);
+  font: 400 clamp(240px, 28vw, 520px)/0.8 Georgia, serif;
+  pointer-events: none;
+}
+
+.formula-snapshot .snapshot-heading {
+  align-items: center;
+  gap: clamp(30px, 7vw, 120px);
+  margin: 2.8rem 0 1.7rem;
+}
+
+.formula-snapshot .snapshot-heading h2 {
+  max-width: 850px;
+}
+
+.formula-snapshot .snapshot-heading p {
+  max-width: 390px;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid rgba(112, 18, 49, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 250, 247, 0.72);
+  backdrop-filter: blur(12px);
+}
+
+.formula-compact-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 1.35rem;
+  color: #75545e;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.formula-compact-summary span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 9px;
+  border-radius: 999px;
+  background: #701231;
+  color: #fff8f4;
+  font: 400 16px/1 Georgia, serif;
+  letter-spacing: 0;
+}
+
+.formula-snapshot .formula-ledger {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 12px;
+  margin: 0 0 1.4rem;
+  border: 0 !important;
+}
+
+.formula-snapshot .formula-ledger button,
+.formula-snapshot .formula-ledger button:nth-child(n) {
+  display: flex !important;
+  min-height: 138px;
+  padding: 1.15rem;
+  border: 1px solid rgba(112, 18, 49, 0.14) !important;
+  border-radius: 22px;
+  background: rgba(255, 250, 247, 0.8);
+  box-shadow: 0 14px 40px rgba(70, 25, 37, 0.05);
+  backdrop-filter: blur(10px);
+  scroll-snap-align: start;
+}
+
+.formula-snapshot .formula-ledger button:hover {
+  color: #fffaf7;
+  background: linear-gradient(145deg, #7c183a, #4a0a20);
+  border-color: transparent !important;
+  box-shadow: 0 22px 48px rgba(70, 12, 31, 0.23);
+  transform: translateY(-5px);
+}
+
+.formula-snapshot .formula-ledger button:hover small,
+.formula-snapshot .formula-ledger button:hover b,
+.formula-snapshot .formula-ledger button:hover svg {
+  color: #fffaf7;
+}
+
+.formula-snapshot .formula-ledger small {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(112, 18, 49, 0.16);
+  border-radius: 50%;
+}
+
+.formula-snapshot .formula-ledger span {
+  margin-top: auto;
+  font-size: 0.74rem;
+  line-height: 1.25;
+}
+
+.formula-snapshot .formula-ledger b {
+  margin-top: 0.35rem;
+  font-size: 1.25rem;
+}
+
+.formula-snapshot .formula-ledger svg {
+  top: 1.35rem;
+  right: 1.1rem;
+}
+
+.formula-snapshot > .outline-button {
+  position: relative;
+  z-index: 1;
+  min-width: min(100%, 390px);
+  padding: 1.1rem 1.35rem;
+  border-color: #701231;
+  border-radius: 999px;
+  color: #fffaf7;
+  background: #701231;
+  box-shadow: 0 14px 34px rgba(112, 18, 49, 0.2);
+}
+
+.formula-snapshot > .outline-button:hover {
+  background: #4a0a20;
+  transform: translateY(-2px);
+}
+
+.formula-game-subhint {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0 16px;
+  color: rgba(84, 52, 61, 0.64);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.formula-dialog {
+  box-shadow: 0 40px 110px rgba(25, 2, 9, 0.42) !important;
+}
+
+.formula-scene {
+  background:
+    radial-gradient(circle at 50% 46%, rgba(181, 95, 118, .24), transparent 22%),
+    radial-gradient(circle at 82% 20%, rgba(232, 174, 187, .12), transparent 28%),
+    linear-gradient(145deg, #4a1022, #260610) !important;
+}
+
+.formula-scene .atelier-bg {
+  opacity: 0;
+  transition: opacity .28s ease;
+}
+
+.formula-scene .atelier-bg.is-ready {
+  opacity: .6;
+}
+
+.formula-dialog .formula-info {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(177, 87, 112, 0.14), transparent 33%),
+    #fffaf7;
+}
+
+.formula-dialog .formula-progress {
+  margin-bottom: 0.9rem;
+}
+
+.formula-game-dots {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 7px;
+  margin: 0 0 0.75rem;
+}
+
+.formula-game-dot {
+  position: relative;
+  height: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(112, 18, 49, 0.14);
+  border-radius: 999px;
+  background: rgba(112, 18, 49, 0.06);
+  transition: background 240ms ease, transform 240ms ease;
+}
+
+.formula-game-dot.is-seen {
+  border-color: transparent;
+  background: linear-gradient(90deg, #a94b68, #701231);
+  transform: scaleY(1.28);
+}
+
+.formula-game-message {
+  margin: 0 0 1.35rem;
+  color: #8f6471;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.formula-dialog .orbit-item.game-seen::after {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #701231;
+  background: #fffaf7;
+  box-shadow: 0 5px 14px rgba(30, 3, 11, 0.24);
+  font: 700 12px/1 Arial, sans-serif;
+}
+
+.formula-dialog .formula-nav button.game-seen {
+  color: #fffaf7;
+  background: #701231;
+  border-color: #701231;
+}
+
+.formula-complete-card {
+  position: relative;
+  overflow: hidden;
+  margin: 1rem 0 0.7rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(112, 18, 49, 0.16);
+  border-radius: 18px;
+  color: #fffaf7;
+  background: linear-gradient(135deg, #7d1a3b, #48091f);
+  box-shadow: 0 16px 38px rgba(73, 8, 29, 0.22);
+  animation: formula-complete-in 440ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+.formula-complete-card small {
+  display: block;
+  margin-bottom: 4px;
+  opacity: 0.72;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.formula-complete-card strong {
+  display: block;
+  font: 400 1.25rem/1.2 Georgia, serif;
+}
+
+.formula-complete-card span {
+  display: block;
+  margin-top: 6px;
+  opacity: 0.8;
+  font-size: 11px;
+}
+
+@keyframes formula-complete-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 900px) {
+  .formula-snapshot .snapshot-heading {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin: 2.2rem 0 1.4rem;
+  }
+
+  .formula-snapshot .snapshot-heading p {
+    max-width: none;
+  }
+
+  .formula-snapshot .formula-ledger {
+    display: flex !important;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 2px 9vw 14px 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .formula-snapshot .formula-ledger::-webkit-scrollbar {
+    display: none;
+  }
+
+  .formula-snapshot .formula-ledger button,
+  .formula-snapshot .formula-ledger button:nth-child(n) {
+    flex: 0 0 min(72vw, 280px);
+    min-height: 132px;
+  }
+
+  .formula-game-subhint {
+    display: block;
+    margin: 11px 0 0 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .formula-dialog .formula-info {
+    padding-top: 1.25rem;
+  }
+
+  .formula-game-message {
+    margin-bottom: 0.8rem;
+  }
+
+  .formula-complete-card {
+    padding: 0.85rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .formula-snapshot .formula-ledger button,
+  .formula-complete-card,
+  .formula-game-dot {
+    animation: none;
+    transition: none;
+  }
+}

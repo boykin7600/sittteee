@@ -1,0 +1,156 @@
+:root {
+  --legal-wine: #5b1529;
+  --legal-ink: #291b1f;
+  --legal-cream: #fbf5f1;
+  --legal-line: rgba(91, 21, 41, .18);
+}
+
+.bad-warning {
+  display: none !important;
+  min-height: 10svh;
+  padding: clamp(24px, 4vw, 44px) max(24px, calc((100vw - 1280px) / 2));
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+  color: var(--legal-ink);
+  background: #f8eee9;
+  border-block: 1px solid var(--legal-line);
+}
+
+footer > p {
+  font-size: 10px;
+  line-height: 1.55;
+  color: rgba(255,255,255,.58);
+}
+.bad-warning > span {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--legal-wine);
+  border-radius: 50%;
+  color: var(--legal-wine);
+  font: 600 18px/1 sans-serif;
+}
+.bad-warning strong { display: block; font: 600 clamp(17px, 1.5vw, 22px)/1.25 sans-serif; }
+.bad-warning p { margin: 5px 0 0; color: #765e66; font: 400 14px/1.55 sans-serif; }
+.bad-warning a {
+  color: var(--legal-wine);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  white-space: nowrap;
+  font: 600 12px/1.3 sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.reviews:not([data-safe-copy="true"]) { visibility: hidden; }
+.reviews[data-safe-copy="true"] { visibility: visible; }
+.review-disclaimer {
+  max-width: 760px;
+  padding-left: 14px;
+  border-left: 2px solid var(--legal-line);
+  line-height: 1.55;
+}
+
+.legal-passport {
+  background: var(--legal-cream);
+  color: var(--legal-ink);
+}
+.legal-passport .passport-head { max-width: 760px; margin-bottom: clamp(28px, 5vw, 58px); }
+.legal-passport .passport-head h2 { margin: 12px 0 16px; }
+.legal-passport .passport-head p { color: #745f66; line-height: 1.65; }
+.passport-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--legal-line); }
+.passport-item { min-height: 132px; padding: clamp(22px, 3vw, 34px); border-bottom: 1px solid var(--legal-line); }
+.passport-item:nth-child(odd) { border-right: 1px solid var(--legal-line); }
+.passport-item:nth-last-child(-n+2) { border-bottom: 0; }
+.passport-item small { display: block; margin-bottom: 10px; color: #9b737f; font: 600 10px/1.3 sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.passport-item strong { display: block; font: 600 clamp(16px, 1.5vw, 21px)/1.35 sans-serif; }
+.passport-item p { margin: 7px 0 0; color: #766169; font: 400 13px/1.55 sans-serif; }
+.passport-doc {
+  margin-top: 18px;
+  padding: clamp(18px, 2.4vw, 26px);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  color: #fdf8f5;
+  background: var(--legal-wine);
+  border-radius: 18px;
+}
+.passport-doc-mark { width: 48px; height: 58px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.42); border-radius: 8px; font: 700 11px/1 sans-serif; letter-spacing: .08em; }
+.passport-doc small { display: block; margin-bottom: 5px; color: rgba(255,255,255,.62); font: 600 9px/1.3 sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+.passport-doc strong { display: block; font: 600 clamp(15px, 1.4vw, 19px)/1.35 sans-serif; }
+.passport-doc p { margin: 5px 0 0; color: rgba(255,255,255,.68); font: 400 12px/1.5 sans-serif; }
+.passport-doc > a { min-height: 44px; padding: 0 18px; display: inline-flex; gap: 10px; align-items: center; justify-content: center; color: var(--legal-wine); background: #fff8f4; border-radius: 999px; text-decoration: none; white-space: nowrap; font: 600 11px/1 sans-serif; }
+.passport-foot { display: flex; gap: 14px 28px; flex-wrap: wrap; margin-top: 22px; font: 400 12px/1.5 sans-serif; color: #725d65; }
+.passport-foot a { color: var(--legal-wine); }
+
+.seller-card {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 18px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.18);
+  display: grid;
+  grid-template-columns: 1.2fr .8fr .9fr;
+  gap: 16px;
+  font: 400 11px/1.55 sans-serif;
+  color: rgba(255,255,255,.72);
+}
+.seller-card strong { color: #fff; font-weight: 600; }
+.seller-card a { color: inherit; }
+
+.cookie-consent {
+  position: fixed;
+  z-index: 10000;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  color: #2c2024;
+  background: rgba(255, 251, 248, .97);
+  border: 1px solid var(--legal-line);
+  border-radius: 18px;
+  box-shadow: 0 18px 60px rgba(45, 10, 24, .22);
+  backdrop-filter: blur(16px);
+}
+.cookie-consent p { margin: 0; font: 400 12px/1.5 sans-serif; }
+.cookie-consent p strong { display: block; margin-bottom: 3px; font-size: 14px; }
+.cookie-consent p a { color: var(--legal-wine); }
+.cookie-actions { display: flex; gap: 8px; }
+.cookie-actions button { min-height: 42px; padding: 0 16px; border-radius: 999px; font: 600 11px/1 sans-serif; cursor: pointer; }
+.cookie-actions .cookie-essential { color: var(--legal-wine); background: transparent; border: 1px solid var(--legal-line); }
+.cookie-actions .cookie-accept { color: #fff; background: var(--legal-wine); border: 1px solid var(--legal-wine); }
+
+.order-legal-note {
+  margin: 12px 0;
+  padding: 14px 16px;
+  color: #745c65;
+  background: #f9efeb;
+  border-radius: 12px;
+  font: 400 11px/1.55 sans-serif;
+}
+.order-legal-note strong { color: #4b2632; }
+.consent-row a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
+@media (max-width: 720px) {
+  .bad-warning { grid-template-columns: auto 1fr; gap: 14px; }
+  .bad-warning a { grid-column: 2; justify-self: start; }
+  .passport-grid { grid-template-columns: 1fr; }
+  .passport-item:nth-child(odd) { border-right: 0; }
+  .passport-item:nth-last-child(2) { border-bottom: 1px solid var(--legal-line); }
+  .passport-doc { grid-template-columns: auto 1fr; gap: 14px; }
+  .passport-doc > a { grid-column: 1 / -1; width: 100%; }
+  .seller-card { grid-template-columns: 1fr; }
+  .cookie-consent { grid-template-columns: 1fr; bottom: 10px; left: 10px; right: 10px; }
+  .cookie-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .cookie-actions button { padding-inline: 10px; }
+}

@@ -1,0 +1,86 @@
+/* Stable, GPU-light depth treatment for the hero bottle. */
+.hero-product .bottle-stage {
+  --bottle-rx: -1deg;
+  --bottle-ry: -4deg;
+  --bottle-scale: .97;
+  perspective: 1100px;
+  transform-style: preserve-3d;
+  cursor: grab;
+  animation: bottle-alive 5.8s ease-in-out infinite;
+}
+
+.hero-product .bottle-stage:active {
+  cursor: grabbing;
+}
+
+.hero-product .bottle-stage canvas {
+  display: none !important;
+}
+
+.hero-product .bottle-stage .bottle-fallback {
+  z-index: 2;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform-origin: 50% 55% !important;
+  transform: perspective(1100px) rotateX(var(--bottle-rx)) rotateY(var(--bottle-ry)) scale(var(--bottle-scale)) !important;
+  filter: drop-shadow(0 34px 28px rgba(24, 0, 9, .42)) drop-shadow(-10px 8px 12px rgba(255, 230, 236, .08));
+  transition: transform .18s ease-out, filter .3s ease;
+  will-change: transform;
+}
+
+.hero-product .bottle-stage::after {
+  content: "";
+  z-index: 5;
+  position: absolute;
+  pointer-events: none;
+  top: 12%;
+  bottom: 13%;
+  left: 38%;
+  width: 11%;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .21), transparent);
+  filter: blur(9px);
+  opacity: .62;
+  transform: translateX(calc(var(--bottle-ry) * -1));
+}
+
+.hero-product .bottle-stage.is-tilting .bottle-fallback {
+  transition-duration: .08s;
+  filter: drop-shadow(0 38px 32px rgba(24, 0, 9, .48)) drop-shadow(-12px 7px 13px rgba(255, 230, 236, .11));
+}
+
+@keyframes bottle-alive {
+  0%, 100% {
+    transform: translateY(0) rotateZ(-.15deg);
+  }
+  50% {
+    transform: translateY(-9px) rotateZ(.2deg);
+  }
+}
+
+@media (max-width: 780px) {
+  .hero-product .bottle-stage {
+    --bottle-scale: .84;
+  }
+
+  .hero-product .bottle-stage .bottle-fallback {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .hero-product .bottle-stage::after {
+    top: 15%;
+    bottom: 17%;
+    left: 41%;
+    width: 10%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-product .bottle-stage,
+  .hero-product .bottle-stage .bottle-fallback {
+    animation: none;
+  }
+}

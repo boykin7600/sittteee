@@ -1,0 +1,117 @@
+.review-rail {
+  display: flex !important;
+  grid-template-columns: none !important;
+  gap: 24px !important;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 2px 22px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(112, 18, 49, 0.34) rgba(112, 18, 49, 0.08);
+  -webkit-overflow-scrolling: touch;
+}
+
+.review-rail::-webkit-scrollbar {
+  height: 6px;
+}
+
+.review-rail::-webkit-scrollbar-track {
+  background: rgba(112, 18, 49, 0.08);
+  border-radius: 999px;
+}
+
+.review-rail::-webkit-scrollbar-thumb {
+  background: rgba(112, 18, 49, 0.34);
+  border-radius: 999px;
+}
+
+.review-rail .review-card {
+  flex: 0 0 clamp(340px, 31vw, 470px);
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.review-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 18px 0 18px;
+}
+
+.review-carousel-controls button {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  border: 1px solid rgba(112, 18, 49, 0.28);
+  border-radius: 999px;
+  background: #fffaf7;
+  color: #701231;
+  font: 400 27px/1 Georgia, serif;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.review-carousel-controls button:hover:not(:disabled) {
+  background: #701231;
+  color: #fffaf7;
+  transform: translateY(-2px);
+}
+
+.review-carousel-controls button:focus-visible {
+  outline: 2px solid #701231;
+  outline-offset: 3px;
+}
+
+.review-carousel-controls button:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.review-carousel-hint {
+  margin-right: auto;
+  color: rgba(60, 27, 37, 0.64);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .review-rail {
+    gap: 14px !important;
+    margin-inline: 0 !important;
+    padding: 2px 7vw 18px 0;
+  }
+
+  .review-rail .review-card {
+    flex-basis: min(86vw, 390px);
+  }
+
+  .review-carousel-controls {
+    margin: 14px 0 12px;
+  }
+
+  .review-carousel-controls button {
+    width: 46px;
+    height: 46px;
+    font-size: 23px;
+  }
+
+  .review-carousel-hint {
+    max-width: 150px;
+    font-size: 10px;
+    line-height: 1.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-rail {
+    scroll-behavior: auto;
+  }
+}

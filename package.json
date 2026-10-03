@@ -1,0 +1,19 @@
+{
+  "name": "kononov-netlify",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev",
+    "check": "node --test"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^27.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
