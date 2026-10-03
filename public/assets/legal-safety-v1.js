@@ -122,7 +122,7 @@
   const improveOrderLegal = () => {
     const sheet = document.querySelector(".order-sheet");
     if (sheet) {
-      const consent = sheet.querySelector(".consent-row span");
+      const consent = sheet.querySelector(".consent-row > span");
       if (consent && consent.dataset.legalReady !== "true") {
         consent.dataset.legalReady = "true";
         consent.innerHTML = `Даю отдельное <a href="/privacy.html#consent" target="_blank">согласие на обработку персональных данных</a>. С <a href="/oferta.html" target="_blank">офертой</a> ознакомлен(а).`;
@@ -135,7 +135,7 @@
         submit?.insertAdjacentElement("beforebegin", note);
       }
     }
-    document.querySelectorAll(".chat-intro .consent-row span").forEach((consent) => {
+    document.querySelectorAll(".chat-intro .consent-row > span").forEach((consent) => {
       if (consent.dataset.legalReady === "true") return;
       consent.dataset.legalReady = "true";
       consent.innerHTML = `Даю отдельное <a href="/privacy.html#consent" target="_blank">согласие на обработку персональных данных</a> для ответа в чате.`;
