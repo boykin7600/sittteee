@@ -330,11 +330,17 @@
     addGentleReveals();
   };
 
-  const startAfterHydration = () => window.setTimeout(boot, 2300);
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", startAfterHydration, { once: true });
-  } else {
+  // The React entry is an async module. DOMContentLoaded can fire before its
+  // hydration commit on a slow connection, so mutating server HTML from a
+  // timeout can produce React error #418. Run only after window.load and two
+  // paint frames; this changes timing only, not layout or behavior.
+  const startAfterHydration = () => {
+    window.requestAnimationFrame(() => window.requestAnimationFrame(boot));
+  };
+  if (document.readyState === "complete") {
     startAfterHydration();
+  } else {
+    window.addEventListener("load", startAfterHydration, { once: true });
   }
 
   const checkoutObserver = new MutationObserver(() => improveCheckout());

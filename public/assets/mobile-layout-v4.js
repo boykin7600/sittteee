@@ -83,13 +83,15 @@
     }
   };
 
-  // Wait until React has finished attaching to the server HTML. The visible
-  // copy already matches the final version, so this delay only enables the
-  // optional interactive enhancements and cannot cause a text flash.
-  const startHeroEnhancement = () => window.setTimeout(refreshHero, 1800);
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", startHeroEnhancement, { once: true });
-  } else {
+  // Async React modules may still be hydrating after DOMContentLoaded on a
+  // slow mobile connection. The load event waits for those modules; two
+  // frames then let React commit before this optional DOM enhancement runs.
+  const startHeroEnhancement = () => {
+    window.requestAnimationFrame(() => window.requestAnimationFrame(refreshHero));
+  };
+  if (document.readyState === "complete") {
     startHeroEnhancement();
+  } else {
+    window.addEventListener("load", startHeroEnhancement, { once: true });
   }
 })();
