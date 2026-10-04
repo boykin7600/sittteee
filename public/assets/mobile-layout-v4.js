@@ -83,9 +83,10 @@
     }
   };
 
-  // Apply the final hero copy as soon as the HTML is ready. Delaying this used
-  // to make the initial wording visibly change after the page appeared.
-  const startHeroEnhancement = () => refreshHero();
+  // Wait until React has finished attaching to the server HTML. The visible
+  // copy already matches the final version, so this delay only enables the
+  // optional interactive enhancements and cannot cause a text flash.
+  const startHeroEnhancement = () => window.setTimeout(refreshHero, 1800);
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", startHeroEnhancement, { once: true });
   } else {
