@@ -1,4 +1,67 @@
 (() => {
+  // The two contextual contact links share this one destination.
+  const MANAGER_URL = "https://t.me/kononovmanager";
+
+  const addProductProtection = () => {
+    const trust = document.querySelector(".trust");
+    if (!trust || document.getElementById("protection")) return;
+    const section = document.createElement("section");
+    section.id = "protection";
+    section.className = "product-protection";
+    section.setAttribute("aria-labelledby", "protection-title");
+    section.innerHTML = `
+      <div class="protection-heading"><p class="protection-eyebrow">Упаковка KONONOV / 4 уровня защиты</p>
+        <h2 id="protection-title">Защита<br><em>в каждой детали.</em></h2>
+        <p class="protection-intro">От проверки подлинности до первого открытия — внимание к тому, что защищает ваш продукт.</p></div>
+      <div class="protection-layout">
+        <figure class="protection-visual"><img src="/assets/product-protection.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="Крышка и защитная мембрана под ней — детали упаковки инозитола KONONOV"><figcaption><span>KONONOV / Детали упаковки</span><span>Крышка · мембрана · флакон</span></figcaption></figure>
+        <div class="protection-details">
+          <article class="protection-feature protection-feature-main"><span class="protection-index">01 / Подлинность</span><h3>Честный знак</h3><p>Маркировка продукта для проверки его подлинности.</p><p class="protection-tip">Найдите код маркировки на упаковке и проверьте продукт через систему «Честный знак».</p></article>
+          <article class="protection-feature"><span class="protection-index">02 / Герметичность</span><h3>Защитная мембрана</h3><p>Дополнительная герметичная защита под крышкой.</p></article>
+          <article class="protection-feature"><span class="protection-index">03 / До первого открытия</span><h3>Контроль первого вскрытия</h3><p>Упаковка позволяет определить, открывался ли продукт ранее.</p></article>
+          <article class="protection-feature"><span class="protection-index">04 / Конструкция крышки</span><h3>Защита от детей</h3><p>Защитная конструкция крышки от случайного открытия детьми.</p><small>Храните продукт в недоступном для детей месте.</small></article>
+        </div>
+      </div>`;
+    trust.insertAdjacentElement("afterend", section);
+    const nav = document.querySelector(".site-header nav");
+    if (nav && !nav.querySelector('a[href="#protection"]')) {
+      const anchor = document.createElement("a");
+      anchor.href = "#protection";
+      anchor.textContent = "Защита";
+      nav.appendChild(anchor);
+    }
+  };
+
+  const addManagerContact = () => {
+    const link = () => {
+      const anchor = document.createElement("a");
+      anchor.className = "manager-link";
+      anchor.href = MANAGER_URL;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.innerHTML = 'Написать менеджеру <span aria-hidden="true">↗</span>';
+      anchor.setAttribute("aria-label", "Написать менеджеру в Telegram — откроется в новой вкладке");
+      return anchor;
+    };
+    const offers = document.querySelector(".offers");
+    if (offers && !offers.querySelector(".manager-contact")) {
+      const contact = document.createElement("aside");
+      contact.className = "manager-contact manager-contact-order";
+      contact.innerHTML = '<div><h3>Нужна помощь с выбором?</h3><p>Ответим на вопросы о продукте и оформлении заказа.</p></div>';
+      contact.appendChild(link());
+      offers.appendChild(contact);
+    }
+    const closing = document.querySelector(".closing-cta");
+    if (closing && !document.querySelector(".manager-contact-end")) {
+      const contact = document.createElement("section");
+      contact.className = "manager-contact manager-contact-end";
+      contact.setAttribute("aria-labelledby", "manager-heading");
+      contact.innerHTML = '<div><p class="manager-eyebrow">На связи / Telegram</p><h2 id="manager-heading">Остались <em>вопросы?</em></h2><p>Расскажем о составе, приёме и доставке. Поможем оформить заказ.</p></div>';
+      contact.appendChild(link());
+      closing.insertAdjacentElement("afterend", contact);
+    }
+  };
+
   const addConfidenceStrip = (hero) => {
     if (!hero || document.querySelector(".confidence-strip")) return;
     const strip = document.createElement("section");
@@ -255,6 +318,8 @@
     reorderStory();
     fixSectionNumbers();
     improveOffers();
+    addProductProtection();
+    addManagerContact();
     makeImagesEfficient();
     fixLegalLinks();
     addMobileBuyBar();

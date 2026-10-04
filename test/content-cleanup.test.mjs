@@ -37,3 +37,33 @@ test("mobile formula ingredients form a compact balanced ring", () => {
   assert.match(css, /html\.mobile-ui \.orbit-3\s*\{[^}]*left:\s*22%/s);
   assert.match(css, /html\.mobile-ui \.orbit-4\s*\{[^}]*left:\s*14%/s);
 });
+
+test("Irina review keeps her face inside the landscape crop", () => {
+  const css = read("public/assets/reviews-carousel-v3.css");
+  assert.match(
+    css,
+    /\.review-rail \.review-card:first-child \.review-photo > img\s*\{[^}]*object-position:\s*center\s+20%/s,
+  );
+});
+
+test("product passport is compact, expandable and omits the redundant intro", () => {
+  const js = read("public/assets/legal-safety-v1.js");
+  assert.doesNotMatch(
+    js,
+    /Основные сведения перенесены с потребительской этикетки\. Полная маркировка доступна на сайте до оформления заказа\./,
+  );
+  assert.match(js, /<details class="passport-disclosure">/);
+  assert.match(js, /<summary>[\s\S]*Раскрыть паспорт продукта[\s\S]*<\/summary>/);
+});
+
+test("collapsed product passport does not leave a large empty mobile gap", () => {
+  const css = read("public/assets/legal-safety-v1.css");
+  assert.match(
+    css,
+    /\.legal-passport:has\(\.passport-disclosure:not\(\[open\]\)\)\s*\{[^}]*padding-bottom:\s*clamp\([^}]*!important/s,
+  );
+  assert.match(
+    css,
+    /\.legal-passport:has\(\.passport-disclosure:not\(\[open\]\)\)\s*\+\s*\.faq\s*\{[^}]*padding-top:\s*clamp\([^}]*!important/s,
+  );
+});

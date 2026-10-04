@@ -4,7 +4,7 @@
   window.initKononovMetrika = function initKononovMetrika() {
     if (initialized) return;
     initialized = true;
-    const source = "https://mc.yandex.ru/metrika/tag.js?id=113331571";
+    const source = "https://mc.yandex.ru/metrika/tag.js?id=113393367";
     window.ym = window.ym || function () {
       (window.ym.a = window.ym.a || []).push(arguments);
     };
@@ -15,7 +15,7 @@
       script.src = source;
       document.head.appendChild(script);
     }
-    window.ym(113331571, "init", {
+    window.ym(113393367, "init", {
       ssr: true,
       webvisor: true,
       clickmap: true,
@@ -29,7 +29,7 @@
 
   window.kononovGoal = function (name, params) {
     if (!initialized || typeof window.ym !== "function") return;
-    window.ym(113331571, "reachGoal", name, params || {});
+    window.ym(113393367, "reachGoal", name, params || {});
   };
 
   if (localStorage.getItem("kononov_analytics_consent") === "accepted") {

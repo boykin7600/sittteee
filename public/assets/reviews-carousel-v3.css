@@ -35,6 +35,11 @@
   scroll-snap-stop: always;
 }
 
+/* Irina's source photo is portrait; keep her face in the landscape card crop. */
+.review-rail .review-card:first-child .review-photo > img {
+  object-position: center 20%;
+}
+
 .review-carousel-controls {
   display: flex;
   align-items: center;

@@ -70,20 +70,28 @@
       <div class="passport-head">
         <div class="section-kicker"><span>06</span> Проверено до покупки</div>
         <h2>Паспорт <i>продукта.</i></h2>
-        <p>Основные сведения перенесены с потребительской этикетки. Полная маркировка доступна на сайте до оформления заказа.</p>
       </div>
-      <div class="passport-grid">
-        <article class="passport-item"><small>Статус продукта</small><strong>Биологически активная добавка к пище</strong><p>Не является лекарственным средством и не предназначена для лечения заболеваний.</p></article>
-        <article class="passport-item"><small>Государственная регистрация</small><strong>${product.sgr}</strong><p>Дата выдачи: ${product.sgrDate}</p></article>
-        <article class="passport-item"><small>Изготовитель</small><strong>${product.manufacturer}</strong><p>Место изготовления указано на полной этикетке.</p></article>
-        <article class="passport-item"><small>Срок и условия хранения</small><strong>${product.shelfLife}</strong><p>Хранить в сухом, защищённом от солнца и недоступном для детей месте при температуре не выше 25 °C.</p></article>
-      </div>
-      <div class="passport-doc">
-        <div class="passport-doc-mark" aria-hidden="true">PDF</div>
-        <div><small>Официальный документ</small><strong>Свидетельство о государственной регистрации</strong><p>Русскоязычная страница, 1,6 МБ. Номер и дата совпадают со сведениями на этикетке.</p></div>
-        <a href="${product.documentUrl}" target="_blank" rel="noopener">Открыть документ <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="passport-foot"><span>Противопоказания: индивидуальная непереносимость компонентов, беременность, кормление грудью.</span><a href="#label">Посмотреть полную этикетку</a></div>`;
+      <details class="passport-disclosure">
+        <summary>
+          <span class="passport-open-label">Раскрыть паспорт продукта</span>
+          <span class="passport-close-label">Скрыть паспорт продукта</span>
+          <i aria-hidden="true">＋</i>
+        </summary>
+        <div class="passport-content">
+          <div class="passport-grid">
+            <article class="passport-item"><small>Статус продукта</small><strong>Биологически активная добавка к пище</strong><p>Не является лекарственным средством и не предназначена для лечения заболеваний.</p></article>
+            <article class="passport-item"><small>Государственная регистрация</small><strong>${product.sgr}</strong><p>Дата выдачи: ${product.sgrDate}</p></article>
+            <article class="passport-item"><small>Изготовитель</small><strong>${product.manufacturer}</strong><p>Место изготовления указано на полной этикетке.</p></article>
+            <article class="passport-item"><small>Срок и условия хранения</small><strong>${product.shelfLife}</strong><p>Хранить в сухом, защищённом от солнца и недоступном для детей месте при температуре не выше 25 °C.</p></article>
+          </div>
+          <div class="passport-doc">
+            <div class="passport-doc-mark" aria-hidden="true">PDF</div>
+            <div><small>Официальный документ</small><strong>Свидетельство о государственной регистрации</strong><p>Русскоязычная страница, 1,6 МБ. Номер и дата совпадают со сведениями на этикетке.</p></div>
+            <a href="${product.documentUrl}" target="_blank" rel="noopener">Открыть документ <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="passport-foot"><span>Противопоказания: индивидуальная непереносимость компонентов, беременность, кормление грудью.</span><a href="#label">Посмотреть полную этикетку</a></div>
+        </div>
+      </details>`;
   };
 
   const fixLegalSectionNumbers = () => {
@@ -122,7 +130,7 @@
   const improveOrderLegal = () => {
     const sheet = document.querySelector(".order-sheet");
     if (sheet) {
-      const consent = sheet.querySelector(".consent-row span");
+      const consent = sheet.querySelector(".consent-row > span");
       if (consent && consent.dataset.legalReady !== "true") {
         consent.dataset.legalReady = "true";
         consent.innerHTML = `Даю отдельное <a href="/privacy.html#consent" target="_blank">согласие на обработку персональных данных</a>. С <a href="/oferta.html" target="_blank">офертой</a> ознакомлен(а).`;
@@ -135,7 +143,7 @@
         submit?.insertAdjacentElement("beforebegin", note);
       }
     }
-    document.querySelectorAll(".chat-intro .consent-row span").forEach((consent) => {
+    document.querySelectorAll(".chat-intro .consent-row > span").forEach((consent) => {
       if (consent.dataset.legalReady === "true") return;
       consent.dataset.legalReady = "true";
       consent.innerHTML = `Даю отдельное <a href="/privacy.html#consent" target="_blank">согласие на обработку персональных данных</a> для ответа в чате.`;

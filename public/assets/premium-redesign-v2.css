@@ -835,6 +835,111 @@ footer {
   }
 }
 
+/* Product protection is a quiet editorial interlude, not another card grid. */
+.product-protection {
+  padding: clamp(56px, 6vw, 96px) 6.5%;
+  background: #310b17;
+  color: #fff7f0;
+  scroll-margin-top: 84px;
+}
+.protection-heading {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  column-gap: 8%;
+  align-items: end;
+  max-width: 1440px;
+  margin: 0 auto 48px;
+}
+.protection-eyebrow {
+  grid-column: 1 / -1;
+  margin: 0 0 24px;
+  color: #e3b1bd;
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.product-protection h2 {
+  margin: 0;
+  font: 400 clamp(40px, 4.6vw, 72px)/1.02 var(--serif);
+  letter-spacing: -.04em;
+  color: #fff7f0;
+}
+.product-protection h2 em { color: #e7a8b8; }
+.protection-intro { max-width: 390px; margin: 0 0 5px; font-size: 16px; line-height: 1.7; color: #decbd0; }
+.protection-layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 8%; max-width: 1440px; margin: auto; align-items: start; }
+.protection-visual { margin: 0; min-width: 0; }
+.protection-visual img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 2px; }
+.protection-visual figcaption { display: flex; justify-content: space-between; gap: 16px; padding-top: 16px; color: #d3acb7; font-size: 11px; line-height: 1.6; }
+.protection-details { min-width: 0; }
+.protection-feature { padding: 25px 0; border-top: 1px solid #72505b; }
+.protection-feature:first-child { padding-top: 0; border-top: 0; }
+.protection-index { display: block; color: #e7a8b8; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.protection-feature h3 { margin: 12px 0 10px; color: #fff7f0; font: 400 clamp(24px, 2.2vw, 34px)/1.12 var(--serif); }
+.protection-feature-main h3 { font-size: clamp(38px, 3.6vw, 54px); }
+.protection-feature p { margin: 0; color: #e2cdd4; font-size: 14px; line-height: 1.7; max-width: 460px; }
+.protection-feature .protection-tip { margin-top: 18px; padding-left: 18px; border-left: 2px solid #e7a8b8; font-size: 13px; }
+.protection-feature small { display: block; margin-top: 12px; color: #cba9b5; font-size: 12px; line-height: 1.5; }
+.manager-contact { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.manager-contact-order { padding-top: 28px; margin-top: 28px; border-top: 1px solid #dac7c8; }
+.manager-contact h3 { margin: 0 0 7px; font: 400 24px/1.2 var(--serif); color: #4b1425; }
+.manager-contact p { margin: 0; font-size: 14px; line-height: 1.65; color: #705b61; }
+.manager-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 48px; padding: 12px 0; border-bottom: 1px solid #8c5263; color: #62182e; font-size: 12px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; text-decoration: none; flex-shrink: 0; transition: color .2s ease, border-color .2s ease; }
+.manager-link span { font-size: 22px; font-weight: 400; }
+.manager-link:hover { color: #a34060; border-color: #a34060; }
+.manager-link:focus-visible { outline: 2px solid #a34060; outline-offset: 5px; }
+.manager-contact-end { padding: clamp(40px, 5vw, 76px) 6.5%; background: #f4ece6; }
+.manager-contact-end h2 { margin: 10px 0 14px; font: 400 clamp(32px, 3.5vw, 52px)/1.08 var(--serif); letter-spacing: -.03em; color: #321b22; }
+.manager-contact-end h2 em { color: #9d4861; }
+.manager-contact .manager-eyebrow { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #7d3349; }
+/* Keep supporting information lighter than the primary purchase cards. */
+.purchase-path { border-radius: 0; background: transparent; box-shadow: none; border-block: 1px solid #dfd1cd; }
+.trust.section-shell { padding-block: clamp(48px, 6vw, 88px); }
+@media (max-width: 900px) {
+  .protection-heading, .protection-layout { column-gap: 5%; }
+  .protection-feature { padding-block: 20px; }
+  .protection-intro { font-size: 14px; }
+}
+@media (max-width: 620px) {
+  .product-protection { padding: 44px 6%; scroll-margin-top: 64px; }
+  .protection-heading, .protection-layout { grid-template-columns: minmax(0, 1fr); }
+  .protection-heading { gap: 20px; margin-bottom: 28px; }
+  .protection-eyebrow { margin: 0; font-size: 10px; }
+  .product-protection h2 { font-size: clamp(36px, 10.5vw, 52px); }
+  .protection-intro { max-width: 34em; }
+  .protection-visual { margin-bottom: 32px; }
+  .protection-visual img { aspect-ratio: 3 / 4; }
+  .protection-visual figcaption { flex-direction: column; gap: 2px; }
+  .protection-feature h3 { font-size: 27px; }
+  .protection-feature-main h3 { font-size: 40px; }
+  .manager-contact { flex-direction: column; align-items: stretch; gap: 16px; }
+  .manager-contact-order { margin-top: 22px; padding-top: 22px; }
+  .manager-contact h3 { font-size: 23px; }
+  .manager-link { width: 100%; box-sizing: border-box; min-height: 48px; }
+  .manager-contact-end { padding: 40px 6%; }
+}
+
+/* Close the oversized gaps visible on narrow screens between complete sections. */
+@media (max-width: 620px) {
+  .formula-snapshot.section-shell { padding-top: 48px !important; padding-bottom: 30px !important; }
+  .offers.section-shell { padding-top: 38px !important; }
+  .formula-snapshot .snapshot-heading { margin-top: 24px; margin-bottom: 18px; }
+  .formula-snapshot > .outline-button { margin-top: 0 !important; }
+
+  .trust.section-shell { padding-block: 42px !important; }
+  .trust-copy > h2 { margin-top: 28px !important; margin-bottom: 18px !important; }
+  .trust-copy > .outline-button { margin-top: 18px !important; }
+  .label-card { margin-top: 24px !important; }
+
+  .product-protection .protection-layout { gap: 0 !important; }
+  .product-protection .protection-visual { margin-bottom: 22px !important; }
+
+  .review-rail .review-card { height: auto !important; min-height: 0 !important; }
+  .review-rail { align-items: flex-start; }
+  .review-rail .review-body > :last-child { margin-top: 16px !important; }
+  .reviews.section-shell { padding-bottom: 38px !important; }
+  .story.journey.section-shell { padding-top: 44px !important; }
+}
+
 /* The server shell must stay byte-compatible with the Vinext payload. Render
    the current positioning in CSS immediately, then the delayed enhancer swaps
    the underlying accessible text after hydration. */
