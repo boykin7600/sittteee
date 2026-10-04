@@ -156,7 +156,8 @@
 .ritual-action > span:first-child { color: #efb4c0; font: 400 1rem Georgia, serif; }
 .ritual-action strong { display: block; margin-bottom: .45rem; font-size: .95rem; }
 .ritual-action p { color: #ffffff9f; margin: 0; font-size: .78rem; line-height: 1.5; }
-.ritual-check { width: 27px; height: 27px; display: grid; place-content: center; color: transparent; border: 1px solid #ffffff4d; border-radius: 50%; font-style: normal; transition: .25s ease; }
+.ritual-check { position: relative; width: 27px; height: 27px; display: grid; place-content: center; color: transparent; border: 1px solid #ffffff4d; border-radius: 50%; font-size: 0; font-style: normal; transition: .25s ease; }
+.ritual-check::after { content: ""; width: 7px; height: 12px; border-right: 2px solid #491023; border-bottom: 2px solid #491023; opacity: 0; transform: translateY(-1px) rotate(45deg); transition: opacity .2s ease; }
 
 .ritual-result {
   max-height: 0;
@@ -195,6 +196,8 @@
 #ritual-second:checked ~ .ritual-board .action-second { background: #7d2440; border-color: #f2bcca8c; }
 #ritual-first:checked ~ .ritual-board .action-first .ritual-check,
 #ritual-second:checked ~ .ritual-board .action-second .ritual-check { color: #491023; border-color: #f5cbd5; background: #f5cbd5; }
+#ritual-first:checked ~ .ritual-board .action-first .ritual-check::after,
+#ritual-second:checked ~ .ritual-board .action-second .ritual-check::after { opacity: 1; }
 #ritual-first:checked ~ #ritual-second:checked ~ .ritual-board .ritual-result { max-height: 160px; opacity: 1; margin-top: .8rem; transform: translateY(0); }
 
 @media (max-width: 1050px) {

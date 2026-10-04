@@ -83,9 +83,9 @@
     }
   };
 
-  // Let React hydrate first. Running these DOM enhancements during hydration
-  // made the browser restore an old cached hero and produced a visible jump.
-  const startHeroEnhancement = () => window.setTimeout(refreshHero, 1800);
+  // Apply the final hero copy as soon as the HTML is ready. Delaying this used
+  // to make the initial wording visibly change after the page appeared.
+  const startHeroEnhancement = () => refreshHero();
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", startHeroEnhancement, { once: true });
   } else {

@@ -111,6 +111,25 @@ footer > p {
 .passport-item small { display: block; margin-bottom: 10px; color: #9b737f; font: 600 10px/1.3 sans-serif; letter-spacing: .12em; text-transform: uppercase; }
 .passport-item strong { display: block; font: 600 clamp(16px, 1.5vw, 21px)/1.35 sans-serif; }
 .passport-item p { margin: 7px 0 0; color: #766169; font: 400 13px/1.55 sans-serif; }
+.passport-honest strong::before {
+  content: "";
+  width: 27px;
+  height: 27px;
+  margin-right: 9px;
+  display: inline-grid;
+  place-items: center;
+  color: #fffaf6;
+  background: var(--legal-wine);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6.5 12.5 3.5 3.5 7.5-8' fill='none' stroke='%23fffaf6' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+  border-radius: 50%;
+  font: 700 14px/1 sans-serif;
+  vertical-align: middle;
+}
+.passport-badges { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.passport-badges img { width: 52px; height: 52px; object-fit: contain; background: var(--legal-wine); border-radius: 50%; }
 .passport-doc {
   margin-top: 18px;
   padding: clamp(18px, 2.4vw, 26px);
@@ -242,6 +261,16 @@ footer > p {
 
 .order-sheet .delivery-note > svg { flex: 0 0 auto; }
 
+.order-sheet .order-location-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr) !important;
+  gap: 14px !important;
+  align-items: end;
+}
+
+.order-sheet .order-location-row > label { min-width: 0; }
+.order-sheet .order-location-row input { width: 100%; min-width: 0; }
+
 @media (max-width: 720px) {
   .bad-warning { grid-template-columns: auto 1fr; gap: 14px; }
   .bad-warning a { grid-column: 2; justify-self: start; }
@@ -251,6 +280,12 @@ footer > p {
   .passport-disclosure > summary i { width: 34px; height: 34px; }
   .passport-item:nth-child(odd) { border-right: 0; }
   .passport-item:nth-last-child(2) { border-bottom: 1px solid var(--legal-line); }
+  .passport-item { min-height: 0; padding: 18px; }
+  .passport-badges img { width: 46px; height: 46px; }
+  .order-sheet .order-location-row {
+    grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr) !important;
+    gap: 10px !important;
+  }
   .passport-doc { grid-template-columns: auto 1fr; gap: 14px; }
   .passport-doc > a { grid-column: 1 / -1; width: 100%; }
   .seller-card { grid-template-columns: 1fr; }

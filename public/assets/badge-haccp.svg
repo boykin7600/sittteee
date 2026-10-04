@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="HACCP">
+<title>HACCP — нейтральная дизайнерская пиктограмма</title>
+<desc>Авторская пиктограмма для макета. Не официальный знак органа сертификации и не подтверждение наличия документа.</desc>
+<g fill="none" stroke="#F6E7D6" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="256" cy="256" r="232" stroke-width="7"/>
+<circle cx="256" cy="256" r="215" stroke-width="2"/>
+<g stroke-width="5"><path d="M256 87l47 18v40c0 31-47 51-47 51s-47-20-47-51v-40z"/><path d="M233 127h46M233 146h46"/></g>
+<path d="M181 368h150" stroke-width="3"/>
+</g>
+<text x="256" y="319" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" fill="#F6E7D6">HACCP</text>
+</svg>

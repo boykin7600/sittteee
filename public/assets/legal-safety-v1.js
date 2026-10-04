@@ -1,10 +1,6 @@
 (() => {
   const product = {
-    sgr: "AM.01.06.01.003.R.000222.05.24",
-    sgrDate: "24.05.2024",
-    manufacturer: "ООО «ЗДРАВФАРМ»",
-    shelfLife: "2 года с даты изготовления",
-    documentUrl: "/documents/kononov-sgr-russian.pdf",
+    shelfLife: "1 год с даты изготовления",
   };
 
   const safeReviews = [
@@ -80,14 +76,14 @@
         <div class="passport-content">
           <div class="passport-grid">
             <article class="passport-item"><small>Статус продукта</small><strong>Биологически активная добавка к пище</strong><p>Не является лекарственным средством и не предназначена для лечения заболеваний.</p></article>
-            <article class="passport-item"><small>Государственная регистрация</small><strong>${product.sgr}</strong><p>Дата выдачи: ${product.sgrDate}</p></article>
-            <article class="passport-item"><small>Изготовитель</small><strong>${product.manufacturer}</strong><p>Место изготовления указано на полной этикетке.</p></article>
             <article class="passport-item"><small>Срок и условия хранения</small><strong>${product.shelfLife}</strong><p>Хранить в сухом, защищённом от солнца и недоступном для детей месте при температуре не выше 25 °C.</p></article>
+            <article class="passport-item passport-honest"><small>Проверка подлинности</small><strong>Честный знак</strong><p>Найдите код маркировки на упаковке и проверьте товар через приложение «Честный знак».</p></article>
+            <article class="passport-item passport-standards"><small>Маркировка и стандарты</small><div class="passport-badges" aria-label="СГР, HACCP, ISO и GMP"><img src="/assets/badge-sgr.svg" alt="СГР"><img src="/assets/badge-haccp.svg" alt="HACCP"><img src="/assets/badge-iso.svg" alt="ISO"><img src="/assets/badge-gmp.svg" alt="GMP"></div></article>
           </div>
           <div class="passport-doc">
-            <div class="passport-doc-mark" aria-hidden="true">PDF</div>
-            <div><small>Официальный документ</small><strong>Свидетельство о государственной регистрации</strong><p>Русскоязычная страница, 1,6 МБ. Номер и дата совпадают со сведениями на этикетке.</p></div>
-            <a href="${product.documentUrl}" target="_blank" rel="noopener">Открыть документ <span aria-hidden="true">↗</span></a>
+            <span class="passport-doc-mark" aria-hidden="true">PDF</span>
+            <div><small>Официальный документ</small><strong>Свидетельство о государственной регистрации</strong><p>Русскоязычная страница · 1,6 МБ</p></div>
+            <a href="/documents/kononov-sgr-russian.pdf" target="_blank" rel="noreferrer">Открыть документ <span aria-hidden="true">↗</span></a>
           </div>
           <div class="passport-foot"><span>Противопоказания: индивидуальная непереносимость компонентов, беременность, кормление грудью.</span><a href="#label">Посмотреть полную этикетку</a></div>
         </div>
