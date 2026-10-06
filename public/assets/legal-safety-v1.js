@@ -37,7 +37,7 @@
       const heading = reviews.querySelector(".reviews-heading h2");
       if (heading) heading.innerHTML = `Отзывы о выборе<br><i>KONONOV.</i>`;
       const count = reviews.querySelector(".rating-summary > b");
-      if (count) count.innerHTML = `8<small>отзывов на сайте</small>`;
+      if (count) count.remove();
       const disclaimer = reviews.querySelector(".review-disclaimer");
       if (disclaimer) disclaimer.textContent = "Отзывы отражают личное мнение покупателей о продукте и опыте заказа. БАД не является лекарственным средством; результаты индивидуальны.";
       reviews.dataset.safeCopy = "true";
@@ -146,33 +146,12 @@
     });
   };
 
-  const addCookieConsent = () => {
-    if (localStorage.getItem("kononov_analytics_consent") || document.querySelector(".cookie-consent")) return;
-    const banner = document.createElement("aside");
-    banner.className = "cookie-consent";
-    banner.setAttribute("aria-label", "Настройки аналитики");
-    banner.innerHTML = `
-      <p><strong>Управление аналитикой</strong>Необходимые данные используются для работы заказа. Яндекс.Метрика включается только с вашего согласия. <a href="/privacy.html#cookies">Подробнее</a></p>
-      <div class="cookie-actions"><button class="cookie-essential" type="button">Только необходимые</button><button class="cookie-accept" type="button">Разрешить аналитику</button></div>`;
-    banner.querySelector(".cookie-essential").addEventListener("click", () => {
-      localStorage.setItem("kononov_analytics_consent", "essential");
-      banner.remove();
-    });
-    banner.querySelector(".cookie-accept").addEventListener("click", () => {
-      localStorage.setItem("kononov_analytics_consent", "accepted");
-      window.initKononovMetrika?.();
-      banner.remove();
-    });
-    document.body.appendChild(banner);
-  };
-
   const boot = () => {
     sanitizeReviews();
     addProductPassport();
     fixLegalSectionNumbers();
     improveFooter();
     improveOrderLegal();
-    addCookieConsent();
   };
 
   const observer = new MutationObserver(() => {

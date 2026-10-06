@@ -1,3 +1,43 @@
+@font-face {
+  font-family: "KONONOV Text";
+  src: url("/assets/fonts/onest-400.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KONONOV Text";
+  src: url("/assets/fonts/onest-500.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KONONOV Text";
+  src: url("/assets/fonts/onest-600.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KONONOV Text";
+  src: url("/assets/fonts/onest-700.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KONONOV Display";
+  src: url("/assets/fonts/prata-400.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --wine-950: #2b0712;
   --wine-900: #430d1d;
@@ -9,8 +49,8 @@
   --cream-200: #eaded7;
   --ink: #26181c;
   --muted: #78666b;
-  --serif: "Iowan Old Style", "Palatino Linotype", Baskerville, Georgia, serif;
-  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "KONONOV Display", "Iowan Old Style", Georgia, serif;
+  --sans: "KONONOV Text", "Helvetica Neue", Arial, sans-serif;
 }
 
 html {
@@ -24,6 +64,22 @@ body {
   font-family: var(--sans);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: var(--sans);
+}
+
+h1 i,
+h2 i,
+h3 i,
+.hero h1 em {
+  font-family: var(--serif);
+  font-style: normal;
+  letter-spacing: -.045em;
 }
 
 /* The manufacturing timing is already explained in FAQ; keep the journey concise. */

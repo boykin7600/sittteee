@@ -142,7 +142,6 @@
   }
 
   function send(type, meta) {
-    if (localStorage.getItem("kononov_analytics_consent") !== "accepted") return;
     fetch("/api/events", {
       method: "POST",
       headers: { "content-type": "application/json" },

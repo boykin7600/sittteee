@@ -32,7 +32,22 @@
     window.ym(113393367, "reachGoal", name, params || {});
   };
 
-  if (localStorage.getItem("kononov_analytics_consent") === "accepted") {
-    window.initKononovMetrika();
+  window.initKononovMetrika();
+
+  window._tmr = window._tmr || [];
+  window._tmr.push({
+    id: "3799713",
+    type: "pageView",
+    start: new Date().getTime(),
+  });
+
+  if (!document.getElementById("tmr-code")) {
+    const topMailScript = document.createElement("script");
+    topMailScript.type = "text/javascript";
+    topMailScript.async = true;
+    topMailScript.id = "tmr-code";
+    topMailScript.src = "https://top-fwz1.mail.ru/js/code.js";
+    const firstScript = document.getElementsByTagName("script")[0];
+    firstScript.parentNode.insertBefore(topMailScript, firstScript);
   }
 })();
