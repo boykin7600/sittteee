@@ -11,16 +11,17 @@
   <link rel="stylesheet" href="./prelanding.css">
   <link rel="preload" as="image" href="../assets/bottle-front.webp">
   <link rel="preload" as="image" href="../assets/kononov-hero-editorial-bg.jpg">
+  <link rel="preload" as="image" href="../assets/result-scenic-background.jpg">
   <link rel="preload" as="font" href="../assets/fonts/yeseva-one-400.ttf" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="./editorial.css">
   <link rel="stylesheet" href="./first-screen.css">
-  <link rel="stylesheet" href="./result-experience.css?v=quiz-compact3">
+  <link rel="stylesheet" href="./result-experience.css?v=result-scenic-bg">
 </head>
 <body id="top" class="opening-view">
   <header class="site-header">
     <a class="brand" href="#top" aria-label="KONONOV, в начало">KONONOV</a>
     <a class="header-product-link" href="https://inositol.shop/" target="_blank" rel="noopener noreferrer">
-      О продукте <span aria-hidden="true">↗</span>
+      О продукте <svg class="ui-arrow ui-arrow-up-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
     </a>
   </header>
 
@@ -37,8 +38,8 @@
         <h1 id="hero-title"><span class="headline-line">Знакомство</span><span class="headline-line">с инозитолом.</span></h1>
         <p class="lead">С чего начать знакомство с инозитолом? Ответьте на несколько коротких вопросов — и мы покажем нужные разделы.</p>
         <div class="hero-actions">
-          <button class="button primary" id="start-quiz" type="button">Начать <span aria-hidden="true">→</span></button>
-          <button class="button quiet" id="skip-quiz" type="button">Пропустить опрос <span aria-hidden="true">↗</span></button>
+          <button class="button primary" id="start-quiz" type="button">Начать <svg class="ui-arrow ui-arrow-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+          <button class="button quiet" id="skip-quiz" type="button">Пропустить опрос <svg class="ui-arrow ui-arrow-up-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
         </div>
         <p class="explain">Опрос помогает выбрать информацию для просмотра. Он не определяет необходимость приёма БАДа и не заменяет консультацию специалиста.</p>
       </div>
@@ -109,8 +110,8 @@
 
         <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
         <div class="quiz-nav">
-          <button class="button quiet" id="back-step" type="button" hidden>← Назад</button>
-          <button class="button primary" id="next-step" type="button">Продолжить <span aria-hidden="true">→</span></button>
+          <button class="button quiet" id="back-step" type="button" hidden><svg class="ui-arrow ui-arrow-left" aria-hidden="true" viewBox="0 0 24 24"><path d="M19 12H5m6 6-6-6 6-6"/></svg> Назад</button>
+          <button class="button primary" id="next-step" type="button">Продолжить <svg class="ui-arrow ui-arrow-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
         </div>
       </form>
       <aside class="quiz-visual" aria-label="Изображение продукта">
@@ -147,8 +148,8 @@
           <figcaption><span>90 КАПСУЛ</span><b>Инозитол</b></figcaption>
         </figure>
         <div class="result-hero-actions">
-          <a class="button primary" href="https://inositol.shop/#order">К вариантам покупки <span aria-hidden="true">↗</span></a>
-          <a class="hero-details-link" href="#result-primary">Сначала изучить продукт <span aria-hidden="true">↓</span></a>
+          <a class="button primary" href="https://inositol.shop/#order-options">К вариантам покупки <svg class="ui-arrow ui-arrow-up-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="hero-details-link" href="#result-primary">Сначала изучить продукт <svg class="ui-arrow ui-arrow-down" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14m-7-7 7 7 7-7"/></svg></a>
         </div>
       </section>
 
@@ -198,8 +199,8 @@
             <h3>Этикетка и государственная регистрация</h3>
             <p class="summary">Номер СГР: AM.01.06.01.003.R.000222.05.24 от 24.05.2024.</p>
             <div class="document-links">
-              <button class="document-button" type="button" data-dialog="label-dialog">Посмотреть этикетку <span>↗</span></button>
-              <a class="document-button" href="../documents/kononov-sgr-russian.pdf" target="_blank" rel="noopener">Открыть СГР, PDF <span>↗</span></a>
+              <button class="document-button" type="button" data-dialog="label-dialog">Посмотреть этикетку <svg class="ui-arrow ui-arrow-up-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
+              <a class="document-button" href="../documents/kononov-sgr-russian.pdf" target="_blank" rel="noopener">Открыть СГР, PDF <svg class="ui-arrow ui-arrow-up-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
             </div>
             <p class="detail">Документ выдан на продукцию «Биологически активная добавка к пище: “Инозитол”». Срок действия свидетельства не ограничен.</p>
           </div>
@@ -210,7 +211,7 @@
           <div class="section-content">
             <h3>Посмотрите варианты<br>и выберите свой.</h3>
             <p class="summary">На официальном сайте — доступные форматы, актуальная цена и условия доставки.</p>
-            <a class="button primary purchase-link" href="https://inositol.shop/#order">К выбору формата <span aria-hidden="true">↗</span></a>
+            <a class="button primary purchase-link" href="https://inositol.shop/#order-options">К выбору формата <svg class="ui-arrow ui-arrow-up-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </div>
         </article>
       </div>
@@ -224,14 +225,14 @@
         <div class="closing-copy">
           <p class="eyebrow">KONONOV / ИНОЗИТОЛ</p>
           <h3>Информация изучена.<br>Продолжить на основном сайте.</h3>
-          <a class="button primary" href="https://inositol.shop/#order">Перейти к покупке <span aria-hidden="true">↗</span></a>
+          <a class="button primary" href="https://inositol.shop/#order-options">Перейти к покупке <svg class="ui-arrow ui-arrow-up-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           <p>Вы перейдёте к вариантам покупки на официальном сайте KONONOV.</p>
         </div>
       </div>
 
       <aside class="result-sticky" id="result-sticky" hidden aria-label="Перейти к покупке">
         <span>KONONOV / ИНОЗИТОЛ</span><span>от 1 799 ₽</span>
-        <a href="https://inositol.shop/#order">К покупке <span aria-hidden="true">↗</span></a>
+        <a href="https://inositol.shop/#order-options">К покупке <svg class="ui-arrow ui-arrow-up-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       </aside>
     </section>
 

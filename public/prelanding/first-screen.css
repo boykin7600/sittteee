@@ -130,8 +130,8 @@ body.opening-view::before { opacity: 1; }
 }
 .site-header .header-product-link:hover::after,
 .site-header .header-product-link:focus-visible::after { transform: scaleX(1); }
-.site-header .header-product-link span { transition: transform .24s ease; }
-.site-header .header-product-link:hover span { transform: translate(3px, -3px); }
+.site-header .header-product-link .ui-arrow { transition: transform .24s ease; }
+.site-header .header-product-link:hover .ui-arrow { transform: translate(3px, -3px); }
 
 .bad-warning {
   min-height: 62px;
@@ -262,7 +262,7 @@ body.opening-view::before { opacity: 1; }
   transition: transform .25s ease;
 }
 .hero-actions .button.quiet:hover::after { transform: scaleX(1); }
-.hero-actions .button.quiet span { font-size: 16px; }
+.hero-actions .button.quiet .ui-arrow { width: 16px; height: 16px; }
 .hero-actions .button.quiet:hover { border-color: var(--wine); background: transparent; }
 .explain {
   max-width: 500px;
@@ -485,5 +485,5 @@ body.opening-view::before { opacity: 1; }
   .hero .lead, .hero-actions, .explain, .hero-product img,
   .brand-letter, .hero-product::after,
   .product-halo, .quiz.hero-next { animation: none !important; }
-  .site-header, .site-header .header-product-link::after, .site-header .header-product-link span { transition: none !important; }
+  .site-header, .site-header .header-product-link::after, .site-header .header-product-link .ui-arrow { transition: none !important; }
 }
