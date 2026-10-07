@@ -38,7 +38,7 @@
       anchor.href = MANAGER_URL;
       anchor.target = "_blank";
       anchor.rel = "noopener noreferrer";
-      anchor.innerHTML = 'Написать менеджеру <span aria-hidden="true">↗</span>';
+      anchor.innerHTML = 'Написать менеджеру <svg class="ui-arrow ui-arrow-up-right" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>';
       anchor.setAttribute("aria-label", "Написать менеджеру в Telegram — откроется в новой вкладке");
       return anchor;
     };
@@ -157,6 +157,12 @@
     });
 
     const grid = offers.querySelector(".offer-grid");
+    if (grid) {
+      grid.id = "order-options";
+      if (window.location.hash === "#order-options") {
+        requestAnimationFrame(() => grid.scrollIntoView({ block: "start", behavior: "auto" }));
+      }
+    }
     if (grid && !offers.querySelector(".purchase-path")) {
       const path = document.createElement("div");
       path.className = "purchase-path";

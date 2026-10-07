@@ -427,6 +427,7 @@ textarea:focus-visible {
 }
 
 .offer-grid {
+  scroll-margin-top: 24px;
   align-items: stretch;
 }
 
@@ -940,7 +941,8 @@ footer {
 .manager-contact h3 { margin: 0 0 7px; font: 400 24px/1.2 var(--serif); color: #4b1425; }
 .manager-contact p { margin: 0; font-size: 14px; line-height: 1.65; color: #705b61; }
 .manager-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 48px; padding: 12px 0; border-bottom: 1px solid #8c5263; color: #62182e; font-size: 12px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; text-decoration: none; flex-shrink: 0; transition: color .2s ease, border-color .2s ease; }
-.manager-link span { font-size: 22px; font-weight: 400; }
+.manager-link .ui-arrow { width: 16px; height: 16px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s ease; }
+.manager-link:hover .ui-arrow { transform: translate(3px, -3px); }
 .manager-link:hover { color: #a34060; border-color: #a34060; }
 .manager-link:focus-visible { outline: 2px solid #a34060; outline-offset: 5px; }
 .manager-contact-end { padding: clamp(40px, 5vw, 76px) 6.5%; background: #f4ece6; }
