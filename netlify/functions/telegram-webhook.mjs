@@ -40,6 +40,8 @@ const helpText = [
   "/reply SESSION сообщение — ответить в чат сайта",
   "/help — показать команды",
   "",
+  "Кнопки «Клиенты» и «Помощь» закреплены внизу чата.",
+  "Под новой анкетой нажмите «Взять в работу» или «Завершить».",
   "Для ответа клиенту удобнее нажать кнопку под сообщением и отправить следующий текст.",
 ].join("\n");
 
@@ -155,7 +157,9 @@ async function claimInvite(payload, user, chatId) {
     usedAt: new Date().toISOString(),
     usedBy: String(user.id),
   });
-  await sendMessage(chatId, `✅ Вы добавлены как администратор.\n\n${helpText}`);
+  await sendMessage(chatId, `✅ Вы добавлены как администратор.\n\n${helpText}`, {
+    reply_markup: adminMenuKeyboard(),
+  });
   await notifyAdmins(`👤 Добавлен администратор: <b>${escapeHTML(user.first_name || user.username || user.id)}</b> · <code>${user.id}</code>`);
 }
 
@@ -278,6 +282,9 @@ async function handleMessage(message) {
 
   await registerAdmin(user, chatId, "command");
 
+  if (text === "👥 Клиенты") return showClients(chatId, 0);
+  if (text === "ℹ️ Помощь") return sendMessage(chatId, helpText, { reply_markup: adminMenuKeyboard() });
+
   if (command === "/cancel") {
     await remove(`admin-state/${userId}`);
     return sendMessage(chatId, "Отправка ответа отменена.");
@@ -325,6 +332,27 @@ async function handleCallback(callback) {
 
   const [kind, action, ...rest] = String(callback.data || "").split(":");
   const id = rest.join(":");
+  if (kind === "quizlead" && (action === "take" || action === "done")) {
+    const status = action === "take" ? "В работе" : "Завершено";
+    const previousText = String(callback.message?.text || "");
+    const cleanPreviousText = previousText.replace(/\n*<b>Статус обработки:<\/b>[^\n]*(?:\n[\s\S]*)?$/, "");
+    await telegram("editMessageText", {
+      chat_id: chatId,
+      message_id: callback.message?.message_id,
+      text: `${cleanPreviousText}\n\n<b>Статус обработки:</b> ${status}`,
+      parse_mode: "HTML",
+      disable_web_page_preview: true,
+      reply_markup: action === "take"
+        ? { inline_keyboard: [[{ text: "✅ Завершить", callback_data: "quizlead:done" }]] }
+        : { inline_keyboard: [] },
+    });
+    await telegram("answerCallbackQuery", {
+      callback_query_id: callback.id,
+      text: action === "take" ? "Анкета взята в работу" : "Анкета завершена",
+    });
+    return;
+  }
+
   if (kind === "clients" && action === "list") {
     await telegram("answerCallbackQuery", {
       callback_query_id: callback.id,
