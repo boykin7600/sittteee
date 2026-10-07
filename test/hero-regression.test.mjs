@@ -10,7 +10,8 @@ const enhancer = readFileSync(join(root, "public/assets/mobile-layout-v4.js"), "
 const premiumCss = readFileSync(join(root, "public/assets/premium-redesign-v2.css"), "utf8");
 
 test("the compatible server shell cannot visibly flash the legacy headline", () => {
-  assert.match(html, /<h1>Производим<br\/>после вашего/i);
+  assert.match(html, /<h1>Инозитол<br\/><em>KONONOV\.<\/em><\/h1>/);
+  assert.doesNotMatch(html, /<h1>Производим<br\/>после вашего/i);
   assert.match(premiumCss, /content:\s*"Инозитол"/);
   assert.match(premiumCss, /content:\s*"KONONOV\."/);
   assert.match(premiumCss, /\.hero-copy\s*>\s*h1\s*\{[^}]*font-size:\s*0/is);

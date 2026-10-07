@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf6f2">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Знакомство с инозитолом KONONOV</title>
+  <meta name="description" content="Коммерческая информационная страница бренда KONONOV о БАД «Инозитол». Навигатор по составу, упаковке, документам и условиям покупки.">
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="./prelanding.css">
+  <link rel="preload" as="image" href="../assets/bottle-front.webp">
+  <link rel="preload" as="image" href="../assets/kononov-hero-editorial-bg.jpg">
+  <link rel="preload" as="font" href="../assets/fonts/yeseva-one-400.ttf" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="./editorial.css">
+  <link rel="stylesheet" href="./first-screen.css">
+  <link rel="stylesheet" href="./result-experience.css?v=quiz-compact3">
+</head>
+<body id="top" class="opening-view">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="KONONOV, в начало">KONONOV</a>
+    <a class="header-product-link" href="https://inositol.shop/" target="_blank" rel="noopener noreferrer">
+      О продукте <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <aside class="bad-warning" aria-label="Обязательное предупреждение">
+    <strong>БАД</strong>
+    <span>Не является лекарственным средством</span>
+  </aside>
+
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">KONONOV · 90 капсул</p>
+        <p class="editorial-index">01 <span>/</span> ЗНАКОМСТВО</p>
+        <h1 id="hero-title"><span class="headline-line">Знакомство</span><span class="headline-line">с инозитолом.</span></h1>
+        <p class="lead">С чего начать знакомство с инозитолом? Ответьте на несколько коротких вопросов — и мы покажем нужные разделы.</p>
+        <div class="hero-actions">
+          <button class="button primary" id="start-quiz" type="button">Начать <span aria-hidden="true">→</span></button>
+          <button class="button quiet" id="skip-quiz" type="button">Пропустить опрос <span aria-hidden="true">↗</span></button>
+        </div>
+        <p class="explain">Опрос помогает выбрать информацию для просмотра. Он не определяет необходимость приёма БАДа и не заменяет консультацию специалиста.</p>
+      </div>
+      <figure class="hero-product">
+        <div class="product-halo" aria-hidden="true"></div>
+        <span class="brand-letter" aria-hidden="true">K</span>
+        <img src="../assets/bottle-front.webp" alt="Упаковка БАД «Инозитол» KONONOV, 90 капсул" width="894" height="1435">
+      </figure>
+    </section>
+
+    <section class="quiz shell" id="quiz" hidden aria-labelledby="quiz-title">
+      <div class="quiz-head">
+        <div>
+          <h2 id="quiz-title">С чего начнём?</h2>
+        </div>
+        <div class="progress-wrap" aria-label="Прогресс опроса">
+          <span id="progress-label" aria-live="polite">Вопрос 01 / 05</span>
+          <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+        </div>
+      </div>
+
+      <form id="quiz-form">
+        <fieldset class="quiz-step" data-step="1">
+          <legend>Сколько вам лет?</legend>
+          <p class="question-note">Можно не указывать возраст. Ответ не влияет на оценку самочувствия или рекомендации.</p>
+          <label class="choice"><input type="radio" name="age" value="18-24"><span><b>18–24 года</b></span></label>
+          <label class="choice"><input type="radio" name="age" value="25-34"><span><b>25–34 года</b></span></label>
+          <label class="choice"><input type="radio" name="age" value="35-44"><span><b>35–44 года</b></span></label>
+          <label class="choice"><input type="radio" name="age" value="45-plus"><span><b>45 лет и старше</b></span></label>
+          <label class="choice"><input type="radio" name="age" value="skip"><span><b>Не хочу указывать</b></span></label>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="2" hidden>
+          <legend>Как вы в последнее время относитесь к своему самочувствию?</legend>
+          <p class="question-note">Это общий вопрос для выбора порядка материалов, не оценка здоровья. Не описывайте симптомы или диагнозы.</p>
+          <label class="choice"><input type="radio" name="wellbeing" value="steady"><span><b>В целом чувствую себя обычно</b><small>Просто хочу разобраться в теме инозитола</small></span></label>
+          <label class="choice"><input type="radio" name="wellbeing" value="attention"><span><b>Хочется внимательнее относиться к себе</b><small>И понять, что известно об инозитоле</small></span></label>
+          <label class="choice"><input type="radio" name="wellbeing" value="exploring"><span><b>Пока не знаю, с чего начать</b><small>Сначала хочу спокойно изучить общую информацию</small></span></label>
+          <label class="choice"><input type="radio" name="wellbeing" value="skip"><span><b>Не хочу отвечать</b></span></label>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="3" hidden>
+          <legend>Почему вы обратили внимание на инозитол?</legend>
+          <label class="choice"><input type="radio" name="reason" value="women"><span><b>Услышала о нём в теме женского самочувствия</b></span></label>
+          <label class="choice"><input type="radio" name="reason" value="understand"><span><b>Хочу понять, что это за вещество</b></span></label>
+          <label class="choice"><input type="radio" name="reason" value="considering"><span><b>Рассматриваю БАД и сначала собираю информацию</b></span></label>
+          <label class="choice"><input type="radio" name="reason" value="curious"><span><b>Стало любопытно, пока без конкретных планов</b></span></label>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="4" hidden>
+          <legend>Что вам хотелось бы прояснить?</legend>
+          <p class="question-note">Опрос не определяет, подходит ли вам БАД, и не заменяет консультацию специалиста.</p>
+          <label class="choice"><input type="radio" name="focus" value="basics"><span><b>Что такое инозитол — коротко и понятно</b></span></label>
+          <label class="choice"><input type="radio" name="focus" value="product"><span><b>Что входит в этот продукт и как его принимают</b></span></label>
+          <label class="choice"><input type="radio" name="focus" value="personal"><span><b>Может ли он подойти именно мне?</b><small>Покажите общую информацию и ограничения без персонального вывода</small></span></label>
+          <label class="choice"><input type="radio" name="focus" value="overview"><span><b>Пока хочу просто спокойно разобраться</b></span></label>
+        </fieldset>
+
+        <fieldset class="quiz-step contact-step" data-step="5" hidden>
+          <legend>Хотите задать вопрос о продукте?</legend>
+          <p class="question-note">Телефон или почта не обязательны. Если оставить контакт, менеджер сможет ответить; без контакта мы передадим команде только ваши ответы.</p>
+          <label class="contact-label" for="quiz-contact">Телефон или e-mail <span>(необязательно)</span></label>
+          <input class="contact-input" id="quiz-contact" name="contact" type="text" autocomplete="email" placeholder="+7 900 000-00-00 или name@example.ru" maxlength="120">
+          <label class="consent-choice"><input id="quiz-consent" name="consent" type="checkbox"><span>Согласен(на) передать выбранные ответы ИП Кононову Даниилу Денисовичу и уполномоченным менеджерам через Telegram. Если оставлю контакт, его можно использовать для ответа. <a href="../privacy.html#quiz" target="_blank" rel="noopener">Подробнее об обработке данных</a>.</span></label>
+          <p class="contact-error" id="contact-error" role="status" aria-live="polite"></p>
+          <button class="text-action contact-skip" id="skip-contact" type="button">Открыть информацию без отправки ответов</button>
+        </fieldset>
+
+        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        <div class="quiz-nav">
+          <button class="button quiet" id="back-step" type="button" hidden>← Назад</button>
+          <button class="button primary" id="next-step" type="button">Продолжить <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+      <aside class="quiz-visual" aria-label="Изображение продукта">
+        <span class="visual-number" aria-hidden="true">01</span>
+        <img id="context-image" src="../assets/bottle-front.webp" alt="Банка Инозитол KONONOV">
+        <p id="context-caption">KONONOV · 90 капсул</p>
+      </aside>
+    </section>
+
+    <section class="quiz-loading shell" id="quiz-loading" hidden aria-labelledby="loading-title" aria-busy="true">
+      <div class="loading-card" role="status" aria-live="polite">
+        <div class="loading-orbit" aria-hidden="true"><span></span><i></i></div>
+        <p class="eyebrow">KONONOV · ИНФОРМАЦИЯ ПО ВАШИМ ОТВЕТАМ</p>
+        <h2 id="loading-title" tabindex="-1">Собираем выбранную информацию</h2>
+        <p id="loading-description">Собираем страницу с разделами, которые вы выбрали.</p>
+        <small>Это не медицинская оценка и не персональное назначение.</small>
+      </div>
+    </section>
+
+    <section class="result shell" id="result" hidden aria-labelledby="result-title">
+      <section class="result-hero" id="result-hero" aria-label="Результат опроса">
+        <div class="result-hero-copy">
+          <p class="eyebrow">KONONOV · ИНОЗИТОЛ</p>
+          <h2 id="result-title">Всё о продукте — коротко и по делу.</h2>
+          <p class="result-deck">Состав, применение, документы и варианты покупки — собрали в одном месте.</p>
+          <p class="result-note">Справочная информация о продукте. БАД не является лекарственным средством.</p>
+          <p id="lead-success" class="lead-success" role="status" hidden></p>
+        </div>
+        <figure class="result-product" aria-label="БАД «Инозитол» KONONOV, 90 капсул">
+          <span class="result-product-letter" aria-hidden="true">K</span>
+          <span class="result-orbit result-orbit-one" aria-hidden="true"></span>
+          <span class="result-orbit result-orbit-two" aria-hidden="true"></span>
+          <img src="../assets/bottle-front.webp" alt="Упаковка БАД «Инозитол» KONONOV, 90 капсул" width="894" height="1435">
+          <figcaption><span>90 КАПСУЛ</span><b>Инозитол</b></figcaption>
+        </figure>
+        <div class="result-hero-actions">
+          <a class="button primary" href="https://inositol.shop/#order">К вариантам покупки <span aria-hidden="true">↗</span></a>
+          <a class="hero-details-link" href="#result-primary">Сначала изучить продукт <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <div class="result-section-heading"><span>Сведения о продукте</span><span>СОСТАВ · МАРКИРОВКА · ПОКУПКА</span></div>
+      <div class="result-grid" id="result-primary" aria-label="Сведения о продукте">
+        <article class="info-card" data-section="composition">
+          <p class="card-index">01 / Состав</p>
+          <div class="section-content">
+            <div class="composition-title"><strong>1 400</strong><span>мг инозитола<br>в суточной дозе</span></div>
+            <p class="summary">На этикетке количество компонентов указано для двух капсул.</p>
+            <dl class="facts">
+              <div><dt>Мио-инозитол</dt><dd>1 366 мг</dd></div>
+              <div><dt>D-хиро-инозитол</dt><dd>34 мг</dd></div>
+              <div><dt>Марганец</dt><dd>2 мг</dd></div>
+              <div><dt>Витамин B9</dt><dd>200 мкг</dd></div>
+              <div><dt>Витамин D3</dt><dd>5 мкг</dd></div>
+            </dl>
+            <p class="detail">Полный состав, включая вспомогательные компоненты и оболочку капсулы, указан на развёрнутой этикетке ниже.</p>
+          </div>
+        </article>
+
+        <article class="info-card" data-section="package">
+          <p class="card-index">02 / Форма выпуска</p>
+          <div class="section-content">
+            <div class="package-title"><strong>90</strong><span>капсул<br>по 925 мг</span></div>
+            <p class="summary">Биологически активная добавка к пище «Инозитол» в капсулах.</p>
+            <p class="detail">Срок годности по этикетке и СГР — 2 года от даты изготовления. Хранить в сухом, защищённом от прямых солнечных лучей и недоступном для детей месте при температуре не выше +25 °C.</p>
+          </div>
+        </article>
+
+        <article class="info-card" data-section="usage">
+          <p class="card-index">03 / Применение и ограничения</p>
+          <div class="section-content">
+            <h3>Применение и ограничения</h3>
+            <p class="summary">Взрослым по 1 капсуле 2 раза в день во время еды. Продолжительность приёма — 1 месяц.</p>
+            <div class="notice-list detail">
+              <p><b>Противопоказания:</b> индивидуальная непереносимость компонентов продукта, беременность, кормление грудью.</p>
+              <p>Перед применением рекомендуется проконсультироваться с врачом.</p>
+              <p>При необходимости приём можно повторить.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="info-card" data-section="documents">
+          <p class="card-index">04 / Маркировка и документы</p>
+          <div class="section-content">
+            <h3>Этикетка и государственная регистрация</h3>
+            <p class="summary">Номер СГР: AM.01.06.01.003.R.000222.05.24 от 24.05.2024.</p>
+            <div class="document-links">
+              <button class="document-button" type="button" data-dialog="label-dialog">Посмотреть этикетку <span>↗</span></button>
+              <a class="document-button" href="../documents/kononov-sgr-russian.pdf" target="_blank" rel="noopener">Открыть СГР, PDF <span>↗</span></a>
+            </div>
+            <p class="detail">Документ выдан на продукцию «Биологически активная добавка к пище: “Инозитол”». Срок действия свидетельства не ограничен.</p>
+          </div>
+        </article>
+
+        <article class="info-card purchase-section" data-section="purchase">
+          <p class="card-index">05 / Покупка</p>
+          <div class="section-content">
+            <h3>Посмотрите варианты<br>и выберите свой.</h3>
+            <p class="summary">На официальном сайте — доступные форматы, актуальная цена и условия доставки.</p>
+            <a class="button primary purchase-link" href="https://inositol.shop/#order">К выбору формата <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+      <section class="result-additional" id="result-additional-wrap" hidden aria-labelledby="additional-title">
+        <h3 id="additional-title">Дополнительная информация</h3>
+        <div class="result-grid" id="result-additional"></div>
+      </section>
+
+      <div class="result-cta" id="result-purchase-cta">
+        <figure class="closing-product" aria-hidden="true"><span>K</span><img src="../assets/bottle-front.webp" alt="" loading="lazy" width="894" height="1435"></figure>
+        <div class="closing-copy">
+          <p class="eyebrow">KONONOV / ИНОЗИТОЛ</p>
+          <h3>Информация изучена.<br>Продолжить на основном сайте.</h3>
+          <a class="button primary" href="https://inositol.shop/#order">Перейти к покупке <span aria-hidden="true">↗</span></a>
+          <p>Вы перейдёте к вариантам покупки на официальном сайте KONONOV.</p>
+        </div>
+      </div>
+
+      <aside class="result-sticky" id="result-sticky" hidden aria-label="Перейти к покупке">
+        <span>KONONOV / ИНОЗИТОЛ</span><span>от 1 799 ₽</span>
+        <a href="https://inositol.shop/#order">К покупке <span aria-hidden="true">↗</span></a>
+      </aside>
+    </section>
+
+    <aside class="bad-warning bottom-warning" aria-label="Обязательное предупреждение">
+      <strong>БАД.</strong>
+      <span>Не является лекарственным средством</span>
+    </aside>
+  </main>
+
+  <footer class="site-footer shell">
+    <span>KONONOV</span>
+    <p>Коммерческая информационная страница бренда. Не является диагностическим сервисом и не содержит медицинских назначений.</p>
+    <a href="../privacy.html">Политика конфиденциальности</a>
+  </footer>
+
+  <dialog id="label-dialog" class="document-dialog" aria-labelledby="label-title">
+    <div class="dialog-head"><h2 id="label-title">Развёрнутая этикетка</h2><button type="button" data-close aria-label="Закрыть">×</button></div>
+    <img src="../assets/label-wrap.webp" alt="Развёрнутая этикетка БАД «Инозитол» KONONOV">
+  </dialog>
+
+  <script src="./prelanding.js?v=quiz-compact" defer></script>
+</body>
+</html>
