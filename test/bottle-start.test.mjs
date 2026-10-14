@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 
 test('bottle effect attempts real renderer loading and keeps fallback on failure', async () => {
-  const source = readFileSync(new URL('../public/_next/static/chunks/site-experience-clean-v10.js', import.meta.url), 'utf8');
+  const source = readFileSync(new URL('../public/_next/static/chunks/site-experience-clean-v10-nr40.js', import.meta.url), 'utf8');
   const component = source.slice(source.indexOf('function ue()'), source.indexOf('var de=', source.indexOf('function ue()')));
   let effect, loads = 0;
   const classes = new Set();

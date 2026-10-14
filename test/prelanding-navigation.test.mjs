@@ -19,7 +19,7 @@ test("prelanding uses crisp inline arrow icons and links directly to the offer c
 
 test("main-site purchase anchor lands on the offer cards, not the section heading", () => {
   const page = read("public/index.html");
-  const enhancement = read("public/assets/premium-redesign-v1.js");
+  const enhancement = read("public/assets/premium-redesign-nr40.js");
   const styles = read("public/assets/premium-redesign-v2.css");
   assert.match(page, /<div class="offer-grid" id="order-options">/);
   assert.match(enhancement, /grid\.id = "order-options";/);

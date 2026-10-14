@@ -13,7 +13,7 @@ test("manufacturing notice is removed from the visible journey", () => {
 });
 
 test("legal warning is compact in the footer instead of a large standalone banner", () => {
-  const legal = read("public/assets/legal-safety-v1.js");
+  const legal = read("public/assets/legal-safety-nr40.js");
   assert.doesNotMatch(legal, /addWarning\(\);/);
   assert.match(legal, /БАД\. Не является лекарственным средством/);
   assert.match(legal, /Перед применением рекомендуется проконсультироваться с врачом/);
@@ -47,7 +47,7 @@ test("Irina review keeps her face inside the landscape crop", () => {
 });
 
 test("product passport is compact, expandable and omits the redundant intro", () => {
-  const js = read("public/assets/legal-safety-v1.js");
+  const js = read("public/assets/legal-safety-nr40.js");
   assert.doesNotMatch(
     js,
     /Основные сведения перенесены с потребительской этикетки\. Полная маркировка доступна на сайте до оформления заказа\./,

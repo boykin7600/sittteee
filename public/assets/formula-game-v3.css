@@ -153,6 +153,22 @@
   box-shadow: 0 40px 110px rgba(25, 2, 9, 0.42) !important;
 }
 
+.formula-scene {
+  background:
+    radial-gradient(circle at 50% 46%, rgba(181, 95, 118, .24), transparent 22%),
+    radial-gradient(circle at 82% 20%, rgba(232, 174, 187, .12), transparent 28%),
+    linear-gradient(145deg, #4a1022, #260610) !important;
+}
+
+.formula-scene .atelier-bg {
+  opacity: 0;
+  transition: opacity .28s ease;
+}
+
+.formula-scene .atelier-bg.is-ready {
+  opacity: .6;
+}
+
 .formula-dialog .formula-info {
   background:
     radial-gradient(circle at 100% 0%, rgba(177, 87, 112, 0.14), transparent 33%),
@@ -195,7 +211,7 @@
 }
 
 .formula-dialog .orbit-item.game-seen::after {
-  content: "✓";
+  content: "";
   display: grid;
   place-items: center;
   position: absolute;
@@ -206,6 +222,10 @@
   border-radius: 50%;
   color: #701231;
   background: #fffaf7;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6.5 12.5 3.5 3.5 7.5-8' fill='none' stroke='%23701231' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
   box-shadow: 0 5px 14px rgba(30, 3, 11, 0.24);
   font: 700 12px/1 Arial, sans-serif;
 }

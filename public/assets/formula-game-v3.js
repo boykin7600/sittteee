@@ -62,6 +62,17 @@
     const dialog = document.querySelector('.formula-dialog');
     if (!dialog) return;
 
+    const backdrop = dialog.querySelector('.atelier-bg');
+    if (backdrop && backdrop.dataset.imageBound !== 'true') {
+      backdrop.dataset.imageBound = 'true';
+      backdrop.decoding = 'async';
+      const revealBackdrop = () => backdrop.classList.add('is-ready');
+      const hideBrokenBackdrop = () => backdrop.classList.remove('is-ready');
+      if (backdrop.complete && backdrop.naturalWidth > 0) revealBackdrop();
+      backdrop.addEventListener('load', revealBackdrop, { once: true });
+      backdrop.addEventListener('error', hideBrokenBackdrop, { once: true });
+    }
+
     const info = dialog.querySelector('.formula-info');
     const progress = dialog.querySelector('.formula-progress');
     if (info && progress && !dialog.querySelector('.formula-game-dots')) {

@@ -24,7 +24,7 @@ test("consent text keeps a readable mobile column and cannot overlap delivery", 
 });
 
 test("legal copy updates the label text instead of the checkbox icon", () => {
-  const js = read("public/assets/legal-safety-v1.js");
+  const js = read("public/assets/legal-safety-nr40.js");
   assert.match(js, /sheet\.querySelector\("\.consent-row > span"\)/);
   assert.match(js, /querySelectorAll\("\.chat-intro \.consent-row > span"\)/);
   assert.doesNotMatch(js, /querySelector\("\.consent-row span"\)/);

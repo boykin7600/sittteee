@@ -17,7 +17,7 @@ test('review updates settle instead of continually rewriting DOM', () => {
     };
   };
   const nav = element(), rating = element();
-  vm.runInNewContext(readFileSync(new URL('../public/assets/legal-safety-v1.js', import.meta.url), 'utf8'), {
+  vm.runInNewContext(readFileSync(new URL('../public/assets/legal-safety-nr40.js', import.meta.url), 'utf8'), {
     document: {
       readyState: 'loading', documentElement: {}, addEventListener() {},
       querySelector: selector => selector === 'nav a[href="#reviews"]' ? nav : selector === '.hero-rating-link' ? rating : null,

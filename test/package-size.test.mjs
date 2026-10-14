@@ -55,11 +55,11 @@ test("every individual GitHub upload file stays below 25 MiB", () => {
 test("live page still points at the latest frontend and backend files", () => {
   const html = readFileSync(join(publicRoot, "index.html"), "utf8");
   const required = [
-    "/_next/static/chunks/index-clean-v18.js",
-    "/_next/static/chunks/site-experience-clean-v11.js",
+    "/_next/static/chunks/index-clean-v17-nr40.js",
+    "/_next/static/chunks/site-experience-clean-v10-nr40.js",
     "/assets/backend-bridge-v4.js",
     "/assets/mobile-fixes-v11.css",
-    "/assets/mobile-layout-v3.js",
+    "/assets/mobile-layout-v4.js",
     "/assets/formula-game-v3.js",
   ];
   for (const reference of required) {

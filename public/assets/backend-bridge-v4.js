@@ -64,13 +64,39 @@
     if (!sheet || sheet.dataset.simplified === "true") return;
     sheet.dataset.simplified = "true";
 
-    ["postalCode", "street", "house", "apartment"].forEach(function (name) {
+    ["postalCode", "house", "apartment"].forEach(function (name) {
       var input = sheet.querySelector('[name="' + name + '"]');
       if (!input) return;
       var label = input.closest("label");
       if (label) label.remove();
       else input.remove();
     });
+
+    var delivery = sheet.querySelector('[name="deliveryMethod"]');
+    if (delivery) {
+      var deliveryLabel = delivery.closest("label");
+      if (deliveryLabel) deliveryLabel.remove();
+      else delivery.remove();
+    }
+
+    var city = sheet.querySelector('[name="city"]');
+    var address = sheet.querySelector('[name="street"]');
+    if (city && address) {
+      var cityRow = city.closest(".form-row");
+      var addressLabel = address.closest("label");
+      if (cityRow && addressLabel) {
+        cityRow.appendChild(addressLabel);
+        cityRow.classList.remove("single-field-row");
+        cityRow.classList.add("order-location-row");
+      }
+      var addressTitle = addressLabel && Array.prototype.find.call(addressLabel.childNodes, function (node) {
+        return node.nodeType === Node.TEXT_NODE && node.textContent.trim();
+      });
+      if (addressTitle) addressTitle.textContent = "Адрес*";
+      address.required = true;
+      address.placeholder = "Улица, дом, квартира";
+      address.autocomplete = "street-address";
+    }
 
     sheet.querySelectorAll(".form-row").forEach(function (row) {
       if (!row.querySelector("label, input, select, textarea")) row.remove();
@@ -79,10 +105,9 @@
 
     var description = sheet.querySelector('[data-slot="sheet-description"]');
     if (description) {
-      description.textContent = "Оставьте имя, телефон и город. Менеджер уточнит полный адрес и детали доставки.";
+      description.textContent = "Оставьте имя, телефон, город и адрес для доставки заказа.";
     }
 
-    var city = sheet.querySelector('[name="city"]');
     if (city) city.placeholder = "Ваш город";
     var comment = sheet.querySelector('[name="comment"]');
     if (comment) comment.placeholder = "Пожелания к заказу — необязательно";

@@ -147,7 +147,8 @@ test("Telegram reply action opens a native message field", () => {
 });
 
 test("Telegram admin menu exposes client CRM navigation", () => {
-  assert.equal(adminMenuKeyboard().inline_keyboard[0][0].callback_data, "clients:list:0");
+  assert.deepEqual(adminMenuKeyboard().keyboard[0].map((button) => button.text), ["👥 Клиенты", "ℹ️ Помощь"]);
+  assert.equal(adminMenuKeyboard().is_persistent, true);
   const keyboard = clientsKeyboard([
     { clientId: "C-000001", name: "Анна", phone: "79991234567" },
   ], { page: 0, hasNext: true });
