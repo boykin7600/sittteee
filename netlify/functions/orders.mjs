@@ -23,6 +23,12 @@ const offers = {
   signature: { title: "3 банки", price: "4 999 ₽", amount: 4999, quantity: 3 },
 };
 
+const deliveryNames = {
+  cdek: "СДЭК",
+  russian_post: "Почта России",
+  courier: "Курьер",
+};
+
 export default async (request) => {
   if (request.method !== "POST") return methodNotAllowed(["POST"]);
 
@@ -35,15 +41,18 @@ export default async (request) => {
     const name = cleanText(body.name, 80);
     const phone = normalizePhone(body.phone);
     const city = cleanText(body.city, 100);
-    const street = cleanText(body.street, 220);
-    if (!name || !city || !street) {
+    const street = cleanText(body.street, 140);
+    const house = cleanText(body.house, 30);
+    if (!name || !city) {
       throw new PublicError("Заполните обязательные поля");
     }
 
     const offerCode = offers[body.offerCode] ? body.offerCode : "solo";
     const offer = offers[offerCode];
     const sessionId = safeSession(body.sessionId);
-    const deliveryMethod = "courier";
+    const deliveryMethod = deliveryNames[body.deliveryMethod]
+      ? body.deliveryMethod
+      : "cdek";
 
     const client = await findOrCreateClient({ name, phone, city });
     const order = await createOrder({
@@ -54,7 +63,7 @@ export default async (request) => {
       city,
       postalCode: cleanText(body.postalCode, 20),
       street,
-      house: "",
+      house,
       apartment: cleanText(body.apartment, 20),
       deliveryMethod,
       comment: cleanText(body.comment, 800),
@@ -69,6 +78,8 @@ export default async (request) => {
       order.city,
       order.postalCode,
       order.street,
+      order.house ? `д. ${order.house}` : "",
+      order.apartment ? `кв. ${order.apartment}` : "",
     ].filter(Boolean).join(", ");
 
     const notification = [
@@ -77,8 +88,9 @@ export default async (request) => {
       "",
       `👤 ${escapeHTML(name)}`,
       `📞 +${escapeHTML(phone)}`,
-      `📍 ${escapeHTML(address || city)}`,
+      `📍 ${escapeHTML(address || city)} · полный адрес уточнит менеджер`,
       `📦 ${escapeHTML(offer.title)} · <b>${escapeHTML(offer.price)}</b>`,
+      `🚚 ${escapeHTML(deliveryNames[deliveryMethod])}`,
       order.comment ? `💬 ${escapeHTML(order.comment)}` : "",
     ].filter(Boolean).join("\n");
 

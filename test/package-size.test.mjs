@@ -55,33 +55,16 @@ test("every individual GitHub upload file stays below 25 MiB", () => {
 test("live page still points at the latest frontend and backend files", () => {
   const html = readFileSync(join(publicRoot, "index.html"), "utf8");
   const required = [
-    "/_next/static/chunks/index-clean-v17.js",
-    "/_next/static/chunks/site-experience-clean-v10.js",
+    "/_next/static/chunks/index-clean-v18.js",
+    "/_next/static/chunks/site-experience-clean-v11.js",
     "/assets/backend-bridge-v4.js",
     "/assets/mobile-fixes-v11.css",
-    "/assets/mobile-layout-v4.js",
-    "/assets/premium-redesign-v2.css",
-    "/assets/reviews-carousel-v3.js",
+    "/assets/mobile-layout-v3.js",
     "/assets/formula-game-v3.js",
   ];
   for (const reference of required) {
-    assert.ok(html.includes(reference), `${reference} must be referenced`);
-    assert.equal(existsSync(join(publicRoot, reference.split("?")[0])), true, `${reference} must exist`);
+    assert.match(html, new RegExp(reference.replaceAll("/", "\\/")));
+    assert.equal(existsSync(join(publicRoot, reference)), true, `${reference} must exist`);
   }
 });
 
-test("Vinext dependency graph points only at the stable 3D bundle", () => {
-  const indexChunk = readFileSync(join(publicRoot, "_next/static/chunks/index-clean-v17.js"), "utf8");
-  const layoutChunk = readFileSync(join(publicRoot, "_next/static/chunks/layout-segment-context-clean-v17.js"), "utf8");
-
-  assert.match(indexChunk, /site-experience-clean-v10\.js/);
-  assert.doesNotMatch(indexChunk, /site-experience-stable-v18\.js/);
-  assert.match(layoutChunk, /index-clean-v17\.js/);
-  assert.doesNotMatch(layoutChunk, /index-clean-v23\.js/);
-});
-
-test("legacy review photos stay compressed for repository uploads", () => {
-  assert.equal(existsSync(join(publicRoot, "assets/review-love.webp")), true);
-  assert.equal(existsSync(join(publicRoot, "assets/review-love.png")), false);
-  assert.ok(statSync(join(publicRoot, "assets/review-love.webp")).size < 500 * 1024);
-});

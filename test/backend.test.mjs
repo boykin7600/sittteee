@@ -17,7 +17,6 @@ import {
   chatReplyPrompt,
   clientCardKeyboard,
   clientsKeyboard,
-  quizLeadKeyboard,
 } from "../netlify/lib/telegram.mjs";
 import { isPermanentAdmin, PERMANENT_ADMIN_IDS } from "../netlify/lib/data.mjs";
 import result, { config as resultConfig } from "../netlify/functions/robokassa-result.mjs";
@@ -148,10 +147,7 @@ test("Telegram reply action opens a native message field", () => {
 });
 
 test("Telegram admin menu exposes client CRM navigation", () => {
-  assert.deepEqual(adminMenuKeyboard().keyboard[0].map((button) => button.text), ["👥 Клиенты", "ℹ️ Помощь"]);
-  assert.equal(adminMenuKeyboard().is_persistent, true);
-  assert.equal(quizLeadKeyboard().inline_keyboard[0][0].callback_data, "quizlead:take");
-  assert.equal(quizLeadKeyboard().inline_keyboard[0][1].callback_data, "quizlead:done");
+  assert.equal(adminMenuKeyboard().inline_keyboard[0][0].callback_data, "clients:list:0");
   const keyboard = clientsKeyboard([
     { clientId: "C-000001", name: "Анна", phone: "79991234567" },
   ], { page: 0, hasNext: true });

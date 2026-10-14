@@ -82,17 +82,8 @@ export function chatReplyPrompt() {
 
 export function adminMenuKeyboard() {
   return {
-    keyboard: [[{ text: "👥 Клиенты" }, { text: "ℹ️ Помощь" }]],
-    resize_keyboard: true,
-    is_persistent: true,
-  };
-}
-
-export function quizLeadKeyboard() {
-  return {
     inline_keyboard: [[
-      { text: "👀 Взять в работу", callback_data: "quizlead:take" },
-      { text: "✅ Завершить", callback_data: "quizlead:done" },
+      { text: "👥 Клиенты", callback_data: "clients:list:0" },
     ]],
   };
 }

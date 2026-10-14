@@ -1,53 +1,30 @@
-(() => {
-  let initialized = false;
-
-  window.initKononovMetrika = function initKononovMetrika() {
-    if (initialized) return;
-    initialized = true;
-    const source = "https://mc.yandex.ru/metrika/tag.js?id=113393367";
-    window.ym = window.ym || function () {
-      (window.ym.a = window.ym.a || []).push(arguments);
-    };
-    window.ym.l = 1 * new Date();
-    if (!Array.from(document.scripts).some((script) => script.src === source)) {
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = source;
-      document.head.appendChild(script);
-    }
-    window.ym(113393367, "init", {
-      ssr: true,
-      webvisor: true,
-      clickmap: true,
-      ecommerce: "dataLayer",
-      referrer: document.referrer,
-      url: location.href,
-      accurateTrackBounce: true,
-      trackLinks: true,
-    });
+(function (m, e, t, r, i, k, a) {
+  m[i] = m[i] || function () {
+    (m[i].a = m[i].a || []).push(arguments);
   };
-
-  window.kononovGoal = function (name, params) {
-    if (!initialized || typeof window.ym !== "function") return;
-    window.ym(113393367, "reachGoal", name, params || {});
-  };
-
-  window.initKononovMetrika();
-
-  window._tmr = window._tmr || [];
-  window._tmr.push({
-    id: "3799713",
-    type: "pageView",
-    start: new Date().getTime(),
-  });
-
-  if (!document.getElementById("tmr-code")) {
-    const topMailScript = document.createElement("script");
-    topMailScript.type = "text/javascript";
-    topMailScript.async = true;
-    topMailScript.id = "tmr-code";
-    topMailScript.src = "https://top-fwz1.mail.ru/js/code.js";
-    const firstScript = document.getElementsByTagName("script")[0];
-    firstScript.parentNode.insertBefore(topMailScript, firstScript);
+  m[i].l = 1 * new Date();
+  for (var j = 0; j < document.scripts.length; j += 1) {
+    if (document.scripts[j].src === r) return;
   }
-})();
+  k = e.createElement(t);
+  a = e.getElementsByTagName(t)[0];
+  k.async = true;
+  k.src = r;
+  a.parentNode.insertBefore(k, a);
+})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=113331571", "ym");
+
+window.ym(113331571, "init", {
+  ssr: true,
+  webvisor: true,
+  clickmap: true,
+  ecommerce: "dataLayer",
+  referrer: document.referrer,
+  url: location.href,
+  accurateTrackBounce: true,
+  trackLinks: true,
+});
+
+window.kononovGoal = function (name, params) {
+  if (typeof window.ym !== "function") return;
+  window.ym(113331571, "reachGoal", name, params || {});
+};

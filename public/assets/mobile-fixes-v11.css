@@ -54,27 +54,10 @@ canvas {
 
   .formula-scene {
     position: relative !important;
-    isolation: isolate;
-    flex: 0 0 clamp(300px, 44dvh, 360px) !important;
+    flex: 0 0 min(42dvh, 390px) !important;
     width: 100% !important;
-    min-height: 300px !important;
+    min-height: 280px !important;
     overflow: hidden !important;
-  }
-
-  .formula-scene::after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    inset: 0;
-    pointer-events: none;
-    background:
-      radial-gradient(circle at 50% 50%, transparent 0 31%, rgba(34, 3, 13, .14) 66%, rgba(24, 2, 9, .48) 100%),
-      linear-gradient(180deg, rgba(58, 8, 24, .06), rgba(33, 3, 13, .2));
-  }
-
-  .formula-scene .atelier-bg.is-ready {
-    z-index: 0;
-    opacity: .34 !important;
   }
 
   .formula-info {
@@ -100,7 +83,6 @@ canvas {
   }
 
   .formula-core {
-    z-index: 2;
     width: 110px !important;
     height: 110px !important;
     box-shadow: 0 0 0 22px #ffffff09, inset 0 0 40px #ffffff14 !important;
@@ -111,16 +93,15 @@ canvas {
   }
 
   .orbit-item {
-    z-index: 3;
-    width: 58px !important;
-    height: 58px !important;
+    width: 62px !important;
+    height: 62px !important;
   }
 
-  .orbit-0 { top: 5% !important; left: 50% !important; margin-left: -29px !important; }
-  .orbit-1 { top: 21% !important; right: 14% !important; }
-  .orbit-2 { right: 22% !important; bottom: 7% !important; }
-  .orbit-3 { left: 22% !important; bottom: 7% !important; }
-  .orbit-4 { top: 21% !important; left: 14% !important; }
+  .orbit-0 { top: 4% !important; left: 50% !important; margin-left: -31px !important; }
+  .orbit-1 { top: 27% !important; right: 6% !important; }
+  .orbit-2 { right: 11% !important; bottom: 8% !important; }
+  .orbit-3 { left: 11% !important; bottom: 8% !important; }
+  .orbit-4 { top: 27% !important; left: 6% !important; }
 
   .formula-active {
     gap: .85rem !important;
@@ -198,27 +179,9 @@ html.mobile-ui .formula-dialog {
 }
 
 html.mobile-ui .formula-scene {
-  isolation: isolate;
-  flex: 0 0 clamp(300px, 44dvh, 360px) !important;
+  flex: 0 0 min(42dvh, 390px) !important;
   width: 100% !important;
-  min-height: 300px !important;
-  overflow: hidden !important;
-}
-
-html.mobile-ui .formula-scene::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 50% 50%, transparent 0 31%, rgba(34, 3, 13, .14) 66%, rgba(24, 2, 9, .48) 100%),
-    linear-gradient(180deg, rgba(58, 8, 24, .06), rgba(33, 3, 13, .2));
-}
-
-html.mobile-ui .formula-scene .atelier-bg.is-ready {
-  z-index: 0;
-  opacity: .34 !important;
+  min-height: 280px !important;
 }
 
 html.mobile-ui .formula-info {
@@ -228,20 +191,19 @@ html.mobile-ui .formula-info {
 }
 
 html.mobile-ui .formula-core {
-  z-index: 2;
   width: 110px !important;
   height: 110px !important;
   box-shadow: 0 0 0 22px #ffffff09, inset 0 0 40px #ffffff14 !important;
 }
 
 html.mobile-ui .formula-core span { font-size: 3.7rem !important; }
-html.mobile-ui .orbit-item { z-index: 3; width: 58px !important; height: 58px !important; }
+html.mobile-ui .orbit-item { width: 62px !important; height: 62px !important; }
 html.mobile-ui .orbit-item span { display: none !important; }
-html.mobile-ui .orbit-0 { top: 5% !important; left: 50% !important; margin-left: -29px !important; }
-html.mobile-ui .orbit-1 { top: 21% !important; right: 14% !important; }
-html.mobile-ui .orbit-2 { right: 22% !important; bottom: 7% !important; }
-html.mobile-ui .orbit-3 { left: 22% !important; bottom: 7% !important; }
-html.mobile-ui .orbit-4 { top: 21% !important; left: 14% !important; }
+html.mobile-ui .orbit-0 { top: 4% !important; left: 50% !important; margin-left: -31px !important; }
+html.mobile-ui .orbit-1 { top: 27% !important; right: 6% !important; }
+html.mobile-ui .orbit-2 { right: 11% !important; bottom: 8% !important; }
+html.mobile-ui .orbit-3 { left: 11% !important; bottom: 8% !important; }
+html.mobile-ui .orbit-4 { top: 27% !important; left: 6% !important; }
 html.mobile-ui .formula-progress { margin: 0 3.2rem 1rem 0 !important; }
 html.mobile-ui .formula-active img { width: 58px !important; height: 58px !important; }
 html.mobile-ui .formula-active strong { font-size: clamp(1.85rem, 9vw, 2.45rem) !important; }
@@ -252,15 +214,6 @@ html.mobile-ui .modal-close {
   top: calc(env(safe-area-inset-top, 0) + .75rem) !important;
   right: .75rem !important;
   left: auto !important;
-  width: 42px !important;
-  height: 42px !important;
-  border: 1px solid rgba(112, 18, 49, .2) !important;
-  box-shadow: 0 10px 28px rgba(28, 2, 10, .2) !important;
-}
-
-html.mobile-ui .modal-close:focus-visible {
-  outline: 2px solid rgba(239, 180, 192, .65) !important;
-  outline-offset: 2px !important;
 }
 
 /* Clearer product hierarchy on the first screen. */
